@@ -1,0 +1,157 @@
+{
+  "law": {
+    "law_id": "UT-SB226",
+    "jurisdiction": "UT",
+    "common_name": "Utah AI Consumer Protection Amendments",
+    "official_citation": "Utah Code § 13-72-101 et seq. (as amended by S.B. 226 and S.B. 332)",
+    "status": "enacted",
+    "effective_date": "2025-05-07",
+    "last_updated": "2026-02-13",
+    "source_url": "https://le.utah.gov/~2025/bills/static/SB0226.html",
+    "summary": "Amends Utah's Artificial Intelligence Policy Act to narrow disclosure requirements to high-risk AI interactions involving sensitive personal information or significant personal decisions in regulated occupations. Establishes safe harbor for AI systems that self-disclose their non-human nature. Extends the AIPA sunset date to July 1, 2027. Prohibits using AI as a defense for consumer protection violations.",
+
+    "applicability": {
+      "who_it_applies_to": ["supplier", "regulated_occupation_provider"],
+      "definitions": {
+        "generative_artificial_intelligence": "An AI system trained on data that can simulate human conversation through text, audio, or visual communication with consumers.",
+        "high-risk_artificial_intelligence_interaction": "An interaction using generative AI in a regulated occupation that involves: (1) collection of sensitive personal information (health, financial, or biometric data); (2) providing personalized recommendations or advice that consumers could reasonably rely upon to make significant personal decisions; or (3) providing financial, legal, medical, or mental health advice or services.",
+        "regulated_occupation": "An occupation or profession requiring licensure or state certification.",
+        "sensitive_personal_information": "Health data, financial data, or biometric data.",
+        "supplier": "A person doing business in Utah that uses generative AI to interact with consumers in connection with a consumer transaction."
+      },
+      "scope_conditions": "Applies to any person using generative AI to interact with Utah consumers in consumer transactions or when providing services in regulated occupations.",
+      "exemptions": [
+        "AI systems not designed to simulate human conversation",
+        "Interactions that do not involve sensitive personal information or significant personal decisions",
+        "Participants in the AI Learning Laboratory Program may receive regulatory mitigation (reduced fines, cure periods)",
+        "Safe harbor for AI systems that self-disclose their non-human nature clearly and conspicuously"
+      ],
+      "geographic_trigger": "Doing business in Utah OR providing services to Utah consumers"
+    },
+
+    "obligations": [
+      {
+        "obligation_id": "UT-SB226-OBL-001",
+        "applies_to": "supplier",
+        "category": "disclosure",
+        "requirement_text": "When a consumer makes a clear and unambiguous request to determine whether they are interacting with a human or AI, the person using generative AI shall disclose that the consumer is interacting with generative AI and not a human being.",
+        "plain_language": "You must tell consumers they're interacting with AI when they clearly ask if they're talking to a human or AI.",
+        "deadline": "2025-05-07",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Utah Code § 13-72 (as amended by S.B. 226)"
+      },
+      {
+        "obligation_id": "UT-SB226-OBL-002",
+        "applies_to": "regulated_occupation_provider",
+        "category": "disclosure",
+        "requirement_text": "A person in a regulated occupation shall disclose the use of generative AI at the beginning of a high-risk artificial intelligence interaction with a consumer.",
+        "plain_language": "Licensed professionals must disclose AI use at the start of high-risk interactions involving sensitive data or significant personal decisions.",
+        "deadline": "2025-05-07",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "Utah Code § 13-72 (as amended by S.B. 226)"
+      },
+      {
+        "obligation_id": "UT-SB226-OBL-003",
+        "applies_to": "supplier",
+        "category": "consumer_rights",
+        "requirement_text": "It is not a defense to the violation of any statute administered and enforced by the Utah Division of Consumer Protection that generative artificial intelligence made the violative statement, undertook the violative act, or was used in furtherance of the violation.",
+        "plain_language": "You cannot blame your AI system for consumer protection violations. You remain legally responsible for all AI-generated statements and actions.",
+        "deadline": "2025-05-07",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Utah Code § 13-2 (as amended by S.B. 149)"
+      },
+      {
+        "obligation_id": "UT-SB226-OBL-004",
+        "applies_to": "supplier",
+        "category": "transparency",
+        "requirement_text": "To qualify for safe harbor protection, the generative AI system itself must clearly and conspicuously disclose it is nonhuman (or an AI assistant or generative AI) at the outset of the interaction and throughout any interaction in connection with a consumer transaction or provision of regulated services.",
+        "plain_language": "To avoid enforcement action, your AI system must automatically disclose it's not human at the beginning and throughout the entire conversation.",
+        "deadline": "2025-05-07",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Utah Code § 13-72 (as amended by S.B. 226)"
+      }
+    ],
+
+    "penalties": {
+      "enforcing_body": "Utah Division of Consumer Protection",
+      "private_right_of_action": false,
+      "penalty_range": "Up to $2,500 per violation; additional penalties up to $5,000 for violations of administrative or court orders",
+      "cure_period": true,
+      "cure_period_days": null,
+      "notes": "No private right of action. Enforced by the Utah Division of Consumer Protection under Utah Code § 13-2-1 and the Utah Consumer Sales Practices Act (Utah Code § 13-11). The division may impose administrative fines up to $2,500 per violation. Courts may impose additional fines up to $2,500 per violation, issue injunctions, order disgorgement, and award other relief. Violations of administrative or court orders may result in additional penalties up to $5,000 per violation. Participants in the AI Learning Laboratory Program may receive regulatory mitigation including reduced fines and cure periods before assessment of penalties."
+    },
+
+    "safe_harbors": [
+      {
+        "description": "A person is not subject to an enforcement action for violation of disclosure provisions if the generative AI itself clearly and conspicuously discloses it is nonhuman (or an AI assistant or generative AI) at the outset of the interaction and throughout any interaction in connection with a consumer transaction or provision of regulated services.",
+        "framework_reference": "Self-disclosure by AI system",
+        "citation": "Utah Code § 13-72 (as amended by S.B. 226)"
+      },
+      {
+        "description": "Participants in the AI Learning Laboratory Program receive regulatory mitigation including delayed restitution payments, cure periods before penalties are assessed, and reduced civil fines during the 12-month participation term (with option for single 12-month extension).",
+        "framework_reference": "AI Learning Laboratory Program",
+        "citation": "Utah Code § 13-72-301 et seq."
+      }
+    ],
+
+    "cross_references": [
+      {
+        "related_law": "CO-SB24-205",
+        "relationship": "similar_obligation",
+        "category": "transparency",
+        "notes": "Both Utah and Colorado require transparency in AI system deployment, but Colorado focuses on algorithmic discrimination in high-risk systems while Utah focuses on disclosure requirements for consumer-facing generative AI. Colorado has more comprehensive risk assessment requirements; Utah emphasizes disclosure and liability for AI-generated content."
+      },
+      {
+        "related_law": "CA-CCPA-ADMT",
+        "relationship": "complementary",
+        "category": "consumer_rights",
+        "notes": "California's ADMT regulations address automated decision-making technology with broader consumer rights (opt-out, access, correction). Utah's approach is narrower, focusing on disclosure obligations for conversational AI and maintaining liability for AI-generated violations of consumer protection laws."
+      },
+      {
+        "related_law": "UT-HB452",
+        "relationship": "related_state_law",
+        "category": "disclosure",
+        "notes": "Utah HB 452 (effective May 7, 2025) specifically regulates mental health chatbots, requiring disclosure of AI use, prohibiting sale of personal data, and mandating transparency about advertisements. HB 452 complements SB 226 by addressing a specific high-risk use case."
+      },
+      {
+        "related_law": "UT-SB332",
+        "relationship": "related_state_law",
+        "category": "risk_assessment",
+        "notes": "SB 332 extends the Utah Artificial Intelligence Policy Act sunset date from May 7, 2025 to July 1, 2027, ensuring continuation of the regulatory framework established by SB 149 and amended by SB 226."
+      },
+      {
+        "related_law": "UT-SB271",
+        "relationship": "related_state_law",
+        "category": "consumer_rights",
+        "notes": "SB 271 (effective May 7, 2025) expands prohibitions against abuses of personal identity to include AI-generated content, protecting individuals from unauthorized AI-generated deepfakes and identity misappropriation."
+      }
+    ],
+
+    "change_log": [
+      {
+        "date": "2024-03-13",
+        "change_type": "new_law",
+        "description": "Utah enacts S.B. 149, establishing the Utah Artificial Intelligence Policy Act (UAIPA) with disclosure requirements for generative AI use in consumer interactions and creating the AI Learning Laboratory Program."
+      },
+      {
+        "date": "2024-05-01",
+        "change_type": "new_law",
+        "description": "S.B. 149 takes effect, making Utah the first state to enact AI-focused consumer protection legislation."
+      },
+      {
+        "date": "2025-03-25",
+        "change_type": "amendment",
+        "description": "S.B. 226 narrows UAIPA disclosure requirements to focus on 'high-risk artificial intelligence interactions' involving sensitive personal information or significant personal decisions. Adds safe harbor for self-disclosing AI systems. S.B. 332 extends UAIPA sunset date to July 1, 2027."
+      },
+      {
+        "date": "2025-05-07",
+        "change_type": "amendment",
+        "description": "S.B. 226 and S.B. 332 amendments take effect, along with companion bills HB 452 (mental health chatbots) and SB 271 (AI-generated identity protection)."
+      }
+    ]
+  }
+}
