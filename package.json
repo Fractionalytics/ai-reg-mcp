@@ -1,0 +1,41 @@
+{
+  "name": "@ai-reg-mcp/server",
+  "version": "0.1.0",
+  "description": "Structured, queryable US AI and privacy law data via MCP",
+  "type": "module",
+  "main": "dist/mcp-server/index.js",
+  "bin": {
+    "ai-reg-mcp": "dist/mcp-server/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "seed": "tsx scripts/seed-db.ts",
+    "validate": "tsx scripts/validate-data.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/mcp-server/index.js"
+  },
+  "files": [
+    "dist/",
+    "data/laws.db"
+  ],
+  "keywords": [
+    "mcp",
+    "ai-regulation",
+    "compliance",
+    "regulatory-data",
+    "colorado-ai-act"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "sql.js": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

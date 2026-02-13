@@ -2,9 +2,9 @@
 
 ## Summary
 
-We've completed extensive strategic planning for RegData MCP — a structured, queryable data layer providing machine-readable US AI and privacy law data via MCP and REST API. The business analysis, market research, product strategy, competitive analysis, and legal liability framework are all documented in the `docs/` and `research/` folders.
+We've completed extensive strategic planning for AI-Reg-MCP — a structured, queryable data layer providing machine-readable US AI and privacy law data via MCP and REST API. The business analysis, market research, product strategy, competitive analysis, and legal liability framework are all documented in the `docs/` and `research/` folders.
 
-**No code has been written yet.** The project is ready to move from planning into implementation.
+**Technical architecture is implemented.** The MCP server skeleton, SQLite data layer, 4 MCP tools, seed data pipeline, and test suite are built and working. The project is now in the data curation phase.
 
 ---
 
@@ -27,19 +27,34 @@ These were discussed and decided during planning. Don't re-litigate unless the f
 
 These are the things that need to happen next, roughly in priority order:
 
-### Immediate (Before Writing Code)
+### Completed
 
-1. **Technical architecture decisions**:
-   - Data storage: JSON files vs. SQLite vs. PostgreSQL for the backing store
-   - MCP server framework: Which SDK/language (TypeScript MCP SDK is most mature, Python also available)
-   - Hosting: Where does the MCP server run? (Options: standalone npm package users install locally, or hosted server they connect to remotely)
-   - How does the REST API layer relate to the MCP server (shared data layer, or separate service)?
+1. **Technical architecture** (DONE):
+   - Storage: SQLite via `sql.js` (WASM-based, zero native deps, bundles with npm)
+   - Language: TypeScript + `@modelcontextprotocol/sdk` v1.26
+   - Hosting: Local npm package via stdio at launch; remote (Streamable HTTP) at weeks 4-5
+   - MCP/REST: Shared data layer in `src/data/`, separate entry points
+   - Schema: `laws`, `obligations`, `change_log` tables with JSON columns for nested fields
+   - All 4 MCP tools implemented and tested (34 tests passing)
+   - Seed pipeline: `data/seed/*.json` → `scripts/seed-db.ts` → `data/laws.db`
+   - 2 example laws seeded: Colorado AI Act, California ADMT Regulations
 
-2. **Data curation workflow design**:
+### Immediate (Next Steps)
+
+1. **Data curation workflow design**:
    - Detailed process for extracting obligations from statutory text using Claude
    - Validation checklist for each structured law entry
    - Sources to cross-reference against (Orrick tracker, BCLP tracker, IAPP resources, Drata's guides)
    - Template/tooling for the curation process
+
+2. **Curate remaining Tier 1 laws** (7 more needed):
+   - California FEHA AI/ADS employment regulations
+   - Texas TRAIGA (HB 149)
+   - Illinois AIVIRA
+   - NYC Local Law 144
+   - Utah AI Consumer Protection amendments
+   - Federal TAKE IT DOWN Act
+   - EU AI Act
 
 3. **Naming and identity**:
    - Project/product name (AI-Reg-MCP is a working title)
@@ -61,7 +76,7 @@ These are the things that need to happen next, roughly in priority order:
 
 5. **Build MCP server** with 4 tools (search_laws, get_obligations, compare_jurisdictions, get_changes)
 
-6. **Test** with Claude Desktop and other MCP clients
+6. **Test** with an MCP client 
 
 7. **Publish** to MCP directories (mcp.so, Glama, PulseMCP)
 
@@ -79,7 +94,7 @@ These are the things that need to happen next, roughly in priority order:
 
 ## Key Strategic Constraints
 
-- **Founder is solo operator** with business/data science/coding skills. No marketing/sales team.
+- **Founder is solo operator** with business/data science/coding skills. No marketing/sales team. Uses Windows 11 laptop for development.
 - **Passive income goal**: Build once, maintain with agentic workflows. Avoid anything requiring ongoing sales calls or relationship management.
 - **MCP ecosystem is the distribution channel**: Discovery through directories and developer communities, not outbound marketing.
 - **Speed matters**: Colorado AI Act effective June 2026, EU AI Act August 2026. The compliance deadline pressure creates urgency for buyers, which creates urgency for us to be in market.

@@ -12,16 +12,17 @@ The US AI regulatory landscape is in genuine chaos: 1,200+ AI-related bills intr
 
 ## Status
 
-This project is in the **planning phase**. No code has been written yet. The planning conversation has covered:
+This project is in **active development**. Technical architecture and MCP server are implemented. Currently curating Tier 1 law data.
 
 - [x] Market analysis and competitive landscape
 - [x] Buyer persona identification
 - [x] Product strategy (MVP scope, schema design, data sources)
 - [x] Distribution strategy (MCP-first)
 - [x] Legal/liability framework
-- [ ] Technical architecture
-- [ ] MCP server implementation
-- [ ] Initial data curation (Tier 1 laws)
+- [x] Technical architecture (SQLite + TypeScript + MCP SDK)
+- [x] MCP server implementation (4 tools, 34 tests passing)
+- [x] Seed data pipeline (validate → seed → query)
+- [ ] Initial data curation (2/9 Tier 1 laws done)
 - [ ] Launch and distribution
 
 ## Key Project Documents

@@ -1,0 +1,141 @@
+{
+  "law": {
+    "law_id": "CA-CCPA-ADMT",
+    "jurisdiction": "CA",
+    "common_name": "California ADMT Regulations (CCPA)",
+    "official_citation": "Cal. Code Regs. tit. 11, §§ 7030-7034",
+    "status": "effective",
+    "effective_date": "2026-01-01",
+    "last_updated": "2026-02-10",
+    "source_url": "https://cppa.ca.gov/regulations/admt.html",
+    "summary": "California Privacy Protection Agency regulations governing automated decision-making technology (ADMT) under the CCPA. Requires pre-use notices, opt-out rights, access to logic, and risk assessments for significant decisions made by ADMT.",
+
+    "applicability": {
+      "who_it_applies_to": ["business", "service_provider"],
+      "definitions": {
+        "business": "A for-profit entity that collects consumers' personal information, doing business in California, meeting CCPA thresholds.",
+        "ADMT": "Any system, software, or process that processes personal information and uses computation to replace or substantially facilitate human decision-making."
+      },
+      "scope_conditions": "Applies to businesses using ADMT for decisions that produce legal or similarly significant effects on consumers, including profiling for behavioral advertising, employment, housing, credit, education, or insurance.",
+      "exemptions": [
+        "ADMT used solely for security or fraud prevention purposes",
+        "Businesses below CCPA applicability thresholds"
+      ],
+      "geographic_trigger": "Doing business in California OR processing personal information of California consumers"
+    },
+
+    "obligations": [
+      {
+        "obligation_id": "CA-CCPA-ADMT-OBL-001",
+        "applies_to": "business",
+        "category": "transparency",
+        "requirement_text": "A business that uses ADMT to make significant decisions shall provide a pre-use notice to the consumer describing the business's use of ADMT, the logic of the ADMT, and the consumer's right to opt out.",
+        "plain_language": "You must notify consumers before using automated decision-making technology for significant decisions, explain the logic, and inform them of their opt-out rights.",
+        "deadline": "2026-01-01",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "Cal. Code Regs. tit. 11, § 7031(a)"
+      },
+      {
+        "obligation_id": "CA-CCPA-ADMT-OBL-002",
+        "applies_to": "business",
+        "category": "consumer_rights",
+        "requirement_text": "A business shall provide consumers with the right to opt out of the use of ADMT for significant decisions. The business shall provide a clear and conspicuous link titled 'Opt-Out of Automated Decision-Making.'",
+        "plain_language": "You must let consumers opt out of automated decision-making for significant decisions via a prominent link.",
+        "deadline": "2026-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Cal. Code Regs. tit. 11, § 7031(b)"
+      },
+      {
+        "obligation_id": "CA-CCPA-ADMT-OBL-003",
+        "applies_to": "business",
+        "category": "transparency",
+        "requirement_text": "A business shall provide consumers with access to information about the logic of the ADMT, including a plain-language explanation of the ADMT's output and how it is used in the decision-making process.",
+        "plain_language": "You must give consumers a plain-language explanation of how your automated decision-making system works and how its output factors into decisions.",
+        "deadline": "2026-01-01",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "Cal. Code Regs. tit. 11, § 7032(a)"
+      },
+      {
+        "obligation_id": "CA-CCPA-ADMT-OBL-004",
+        "applies_to": "business",
+        "category": "risk_assessment",
+        "requirement_text": "A business that uses ADMT for decisions that produce legal or similarly significant effects shall conduct a risk assessment that evaluates the risks of the ADMT to consumers' privacy and the benefits of the processing.",
+        "plain_language": "You must conduct a risk assessment weighing privacy risks vs. benefits before using ADMT for significant decisions.",
+        "deadline": "2026-01-01",
+        "recurring": true,
+        "frequency": "annual",
+        "citation": "Cal. Code Regs. tit. 11, § 7033(a)"
+      },
+      {
+        "obligation_id": "CA-CCPA-ADMT-OBL-005",
+        "applies_to": "business",
+        "category": "risk_assessment",
+        "requirement_text": "The risk assessment shall include an evaluation of the extent to which the ADMT's use involves the processing of sensitive personal information, the risk of algorithmic discrimination, and safeguards to address identified risks.",
+        "plain_language": "Your risk assessment must specifically evaluate sensitive data processing, discrimination risk, and what safeguards you have in place.",
+        "deadline": "2026-01-01",
+        "recurring": true,
+        "frequency": "annual",
+        "citation": "Cal. Code Regs. tit. 11, § 7033(b)"
+      },
+      {
+        "obligation_id": "CA-CCPA-ADMT-OBL-006",
+        "applies_to": "business",
+        "category": "consumer_rights",
+        "requirement_text": "A business shall provide consumers with the right to access information about the result of the ADMT, including any profiling the business has conducted.",
+        "plain_language": "Consumers have the right to see the results and any profiling your automated system has produced about them.",
+        "deadline": "2026-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Cal. Code Regs. tit. 11, § 7032(b)"
+      }
+    ],
+
+    "penalties": {
+      "enforcing_body": "California Privacy Protection Agency (CPPA)",
+      "private_right_of_action": false,
+      "penalty_range": "$2,500 per violation; $7,500 per intentional violation",
+      "cure_period": true,
+      "cure_period_days": 30,
+      "notes": "Enforced by CPPA under CCPA enforcement provisions. No private right of action for ADMT-specific violations, though data breach provisions have separate private action."
+    },
+
+    "safe_harbors": [
+      {
+        "description": "Limited exemption for ADMT used exclusively for security, fraud prevention, or safety purposes where no significant decision about a consumer results.",
+        "framework_reference": "CCPA security exemption",
+        "citation": "Cal. Code Regs. tit. 11, § 7030(c)"
+      }
+    ],
+
+    "cross_references": [
+      {
+        "related_law": "CO-SB24-205",
+        "relationship": "similar_obligation",
+        "category": "risk_assessment",
+        "notes": "Colorado AI Act has similar risk assessment requirements but scoped to 'high-risk AI systems' rather than ADMT broadly. Colorado includes a NIST AI RMF safe harbor that California does not."
+      },
+      {
+        "related_law": "CA-FEHA-AI",
+        "relationship": "complementary",
+        "category": "bias_testing",
+        "notes": "FEHA AI/ADS employment regulations address AI bias in employment specifically, while ADMT regulations address broader ADMT usage including employment."
+      }
+    ],
+
+    "change_log": [
+      {
+        "date": "2025-03-14",
+        "change_type": "new_law",
+        "description": "CPPA adopted final ADMT regulations after extended rulemaking process."
+      },
+      {
+        "date": "2025-11-01",
+        "change_type": "guidance",
+        "description": "CPPA published guidance on ADMT compliance expectations and enforcement priorities."
+      }
+    ]
+  }
+}
