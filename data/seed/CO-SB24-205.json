@@ -1,0 +1,196 @@
+{
+  "law": {
+    "law_id": "CO-SB24-205",
+    "jurisdiction": "CO",
+    "common_name": "Colorado AI Act",
+    "official_citation": "C.R.S. § 6-1-1701 et seq.",
+    "status": "enacted",
+    "effective_date": "2026-06-30",
+    "last_updated": "2026-02-10",
+    "source_url": "https://leg.colorado.gov/bills/sb24-205",
+    "summary": "Requires developers and deployers of high-risk AI systems to use reasonable care to protect consumers from algorithmic discrimination. Establishes transparency, risk assessment, and impact assessment obligations with safe harbor for NIST AI RMF compliance.",
+
+    "applicability": {
+      "who_it_applies_to": ["developer", "deployer"],
+      "definitions": {
+        "developer": "A person doing business in Colorado that develops or intentionally and substantially modifies an artificial intelligence system.",
+        "deployer": "A person doing business in Colorado that deploys a high-risk artificial intelligence system."
+      },
+      "scope_conditions": "Applies to high-risk AI systems used to make or be a substantial factor in making a consequential decision in education, employment, financial services, government services, healthcare, housing, insurance, or legal services.",
+      "exemptions": [
+        "AI systems that do not make or substantially factor into consequential decisions",
+        "Narrow AI systems performing clearly defined tasks (anti-fraud, spam filtering, etc.)",
+        "NIST AI RMF compliance provides affirmative defense"
+      ],
+      "geographic_trigger": "Doing business in Colorado OR deploying high-risk AI affecting Colorado consumers"
+    },
+
+    "obligations": [
+      {
+        "obligation_id": "CO-SB24-205-OBL-001",
+        "applies_to": "deployer",
+        "category": "risk_assessment",
+        "requirement_text": "Deployers shall use reasonable care to protect consumers from any known or reasonably foreseeable risks of algorithmic discrimination arising from the deployer's use of a high-risk artificial intelligence system.",
+        "plain_language": "You must conduct risk assessments and take reasonable steps to prevent your AI system from discriminating against protected classes.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "C.R.S. § 6-1-1702(3)(a)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-002",
+        "applies_to": "deployer",
+        "category": "risk_assessment",
+        "requirement_text": "Deployers shall implement a risk management policy and program to govern the deployer's deployment of each high-risk artificial intelligence system.",
+        "plain_language": "You must have a formal, documented risk management program for each high-risk AI system you deploy.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "annual",
+        "citation": "C.R.S. § 6-1-1702(3)(b)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-003",
+        "applies_to": "deployer",
+        "category": "risk_assessment",
+        "requirement_text": "Deployers shall complete an impact assessment for each high-risk artificial intelligence system the deployer currently deploys or plans to deploy.",
+        "plain_language": "You must complete an impact assessment for each high-risk AI system before deployment and update it regularly.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "annual",
+        "citation": "C.R.S. § 6-1-1702(3)(c)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-004",
+        "applies_to": "deployer",
+        "category": "transparency",
+        "requirement_text": "A deployer shall notify a consumer that the deployer has deployed a high-risk artificial intelligence system to make, or be a substantial factor in making, a consequential decision concerning the consumer.",
+        "plain_language": "You must tell consumers when a high-risk AI system is being used to make important decisions about them.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "C.R.S. § 6-1-1703(1)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-005",
+        "applies_to": "deployer",
+        "category": "consumer_rights",
+        "requirement_text": "A deployer shall provide a consumer with an opportunity to correct any incorrect personal data that the high-risk artificial intelligence system processed and to appeal an adverse consequential decision.",
+        "plain_language": "You must let consumers correct their data and appeal adverse AI decisions.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "C.R.S. § 6-1-1703(2)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-006",
+        "applies_to": "deployer",
+        "category": "disclosure",
+        "requirement_text": "If a deployer discovers that a high-risk artificial intelligence system that the deployer has deployed has caused algorithmic discrimination, the deployer shall notify the attorney general within ninety days.",
+        "plain_language": "If your deployed AI system causes discrimination, you must notify the Colorado AG within 90 days.",
+        "deadline": "2026-06-30",
+        "recurring": false,
+        "frequency": null,
+        "citation": "C.R.S. § 6-1-1702(3)(d)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-007",
+        "applies_to": "developer",
+        "category": "documentation",
+        "requirement_text": "A developer shall make available to deployers and other developers of a high-risk artificial intelligence system documentation that describes the high-risk AI system's capabilities, limitations, intended uses, and known risks.",
+        "plain_language": "You must provide deployers with documentation about your AI system's capabilities, limitations, and known risks.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "C.R.S. § 6-1-1704(1)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-008",
+        "applies_to": "developer",
+        "category": "documentation",
+        "requirement_text": "A developer shall make available documentation describing the type of data used to train the high-risk artificial intelligence system, known limitations, and the purpose for which the system was designed.",
+        "plain_language": "You must document and share training data information, known limitations, and system purpose.",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "C.R.S. § 6-1-1704(2)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-009",
+        "applies_to": "developer",
+        "category": "disclosure",
+        "requirement_text": "If a developer discovers that a high-risk artificial intelligence system that the developer has developed or intentionally and substantially modified has caused or is reasonably likely to cause algorithmic discrimination, the developer shall notify the attorney general and all known deployers within ninety days.",
+        "plain_language": "If your AI system causes or is likely to cause discrimination, notify the AG and all known deployers within 90 days.",
+        "deadline": "2026-06-30",
+        "recurring": false,
+        "frequency": null,
+        "citation": "C.R.S. § 6-1-1704(3)"
+      },
+      {
+        "obligation_id": "CO-SB24-205-OBL-010",
+        "applies_to": "developer",
+        "category": "transparency",
+        "requirement_text": "A developer shall make available to deployers a high-level summary of the types of data used to train the AI system, in a manner that does not require disclosure of trade secrets.",
+        "plain_language": "You must provide a high-level summary of training data types to deployers (trade secrets are protected).",
+        "deadline": "2026-06-30",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "C.R.S. § 6-1-1704(2)(a)"
+      }
+    ],
+
+    "penalties": {
+      "enforcing_body": "Colorado Attorney General",
+      "private_right_of_action": false,
+      "penalty_range": "$2,000 - $20,000 per violation under Colorado Consumer Protection Act",
+      "cure_period": true,
+      "cure_period_days": 60,
+      "notes": "No private right of action. Enforced exclusively by Colorado AG under the Colorado Consumer Protection Act (C.R.S. § 6-1-101 et seq.). Cure period of 60 days before enforcement action."
+    },
+
+    "safe_harbors": [
+      {
+        "description": "Affirmative defense for developers and deployers that comply with the NIST AI Risk Management Framework or a comparable nationally or internationally recognized risk management framework.",
+        "framework_reference": "NIST AI RMF 1.0",
+        "citation": "C.R.S. § 6-1-1706"
+      },
+      {
+        "description": "Affirmative defense for deployers that comply with deployer obligations and can demonstrate reasonable efforts to identify and mitigate algorithmic discrimination.",
+        "framework_reference": "Deployer duty of care standard",
+        "citation": "C.R.S. § 6-1-1706(2)"
+      }
+    ],
+
+    "cross_references": [
+      {
+        "related_law": "CA-CCPA-ADMT",
+        "relationship": "similar_obligation",
+        "category": "risk_assessment",
+        "notes": "California ADMT regulations impose similar risk assessment requirements but with different scope definitions and broader coverage of automated decision-making technology."
+      },
+      {
+        "related_law": "TX-TRAIGA",
+        "relationship": "similar_obligation",
+        "category": "transparency",
+        "notes": "Texas TRAIGA has similar transparency requirements for high-risk AI but with different enforcement mechanisms and no safe harbor for NIST compliance."
+      }
+    ],
+
+    "change_log": [
+      {
+        "date": "2024-05-17",
+        "change_type": "new_law",
+        "description": "SB 24-205 signed into law by Governor Polis."
+      },
+      {
+        "date": "2025-04-14",
+        "change_type": "delay",
+        "description": "HB 25-1172 delays effective date from February 1, 2026 to June 30, 2026 and narrows scope. Removes NIST AI RMF safe harbor mandate in favor of permissive affirmative defense."
+      },
+      {
+        "date": "2025-08-15",
+        "change_type": "amendment",
+        "description": "Final amended version clarifies definitions of high-risk AI system and algorithmic discrimination. Adds 60-day cure period."
+      }
+    ]
+  }
+}
