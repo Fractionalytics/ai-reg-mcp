@@ -13,7 +13,9 @@
     "validate": "tsx scripts/validate-data.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "start": "node dist/mcp-server/index.js"
+    "test:integration": "tsx scripts/manual-test.ts",
+    "start": "node dist/mcp-server/index.js",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/mcp-server/index.js"
   },
   "files": [
     "dist/",

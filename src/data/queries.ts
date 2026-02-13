@@ -13,6 +13,7 @@ import type {
   Obligation,
   ChangeLogEntry,
 } from "./types.js";
+import { normalizeJurisdiction, normalizeJurisdictions } from "./jurisdictions.js";
 
 // ----- Helper to parse JSON columns from law rows -----
 
@@ -50,8 +51,11 @@ export function searchLaws(db: Database, params: SearchLawsParams): Law[] {
   const values: unknown[] = [];
 
   if (params.jurisdiction) {
-    conditions.push("l.jurisdiction = ?");
-    values.push(params.jurisdiction);
+    const normalized = normalizeJurisdiction(params.jurisdiction);
+    if (normalized) {
+      conditions.push("l.jurisdiction = ?");
+      values.push(normalized);
+    }
   }
   if (params.status) {
     conditions.push("l.status = ?");
@@ -113,8 +117,11 @@ export function getObligations(
     values.push(params.law_id);
   }
   if (params.jurisdiction) {
-    conditions.push("l.jurisdiction = ?");
-    values.push(params.jurisdiction);
+    const normalized = normalizeJurisdiction(params.jurisdiction);
+    if (normalized) {
+      conditions.push("l.jurisdiction = ?");
+      values.push(normalized);
+    }
   }
   if (params.applies_to) {
     conditions.push("o.applies_to = ?");
@@ -168,11 +175,18 @@ export function compareJurisdictions(
   db: Database,
   params: CompareJurisdictionsParams
 ): JurisdictionComparison[] {
-  const placeholders = params.jurisdictions.map(() => "?").join(",");
+  // Normalize all jurisdiction names to canonical abbreviations
+  const normalizedJurisdictions = normalizeJurisdictions(params.jurisdictions);
+
+  if (normalizedJurisdictions.length === 0) {
+    return [];
+  }
+
+  const placeholders = normalizedJurisdictions.map(() => "?").join(",");
   const conditions: string[] = [
     `l.jurisdiction IN (${placeholders})`,
   ];
-  const values: unknown[] = [...params.jurisdictions];
+  const values: unknown[] = [...normalizedJurisdictions];
 
   if (params.category) {
     conditions.push("o.category = ?");

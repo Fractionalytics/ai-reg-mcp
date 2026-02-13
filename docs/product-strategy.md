@@ -172,7 +172,7 @@ Given a date range, return all changes (amendments, delays, enforcement actions,
 - Store as JSON files
 - Cross-reference against published analyses from Orrick, BCLP, Baker Botts, IAPP
 - Build the MCP server with the 4 tools above
-- Test with Claude Desktop
+- Test with an MCP client
 
 ### Week 3: Initial Launch
 - Publish to MCP directories

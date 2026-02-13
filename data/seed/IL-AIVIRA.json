@@ -1,0 +1,182 @@
+{
+  "law": {
+    "law_id": "IL-AIVIRA",
+    "jurisdiction": "IL",
+    "common_name": "Illinois Artificial Intelligence Video Interview Act",
+    "official_citation": "820 ILCS 42/1 et seq.",
+    "status": "effective",
+    "effective_date": "2020-01-01",
+    "last_updated": "2026-02-13",
+    "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&ChapterID=68",
+    "summary": "Regulates employer use of artificial intelligence to analyze video interviews of job applicants. Requires employers to notify applicants before video interviews that AI may be used, explain how the AI works and what characteristics it evaluates, and obtain consent. Prohibits sharing videos except with necessary evaluators, requires video deletion upon request within 30 days, and mandates demographic reporting to detect potential bias when employers rely solely on AI analysis for interview selection.",
+
+    "applicability": {
+      "who_it_applies_to": ["employer"],
+      "definitions": {
+        "employer": "An employer that asks applicants to record video interviews and uses an artificial intelligence analysis of the applicant-submitted videos when considering applicants for positions based in Illinois.",
+        "artificial intelligence analysis": "Technology that evaluates video interviews by analyzing characteristics such as facial expressions, word choice, tone, body language, and gestures to determine a candidate's work style, cognitive ability, and interpersonal skills. The Act does not provide a formal statutory definition."
+      },
+      "scope_conditions": "Applies to all employers that use AI tools to analyze video interviews of applicants for positions based in Illinois. Employers that rely solely on AI analysis to determine in-person interview selection must also report demographic data annually.",
+      "exemptions": [
+        "No explicit exemptions for employer size or type",
+        "No exemptions for independent contractors (applies to applicants for employment)",
+        "Does not apply to employers who do not use AI to analyze video interviews",
+        "Does not apply when AI is not the evaluation method for video interviews"
+      ],
+      "geographic_trigger": "Applies when considering applicants for positions based in Illinois, regardless of where the employer is located"
+    },
+
+    "obligations": [
+      {
+        "obligation_id": "IL-AIVIRA-OBL-001",
+        "applies_to": "employer",
+        "category": "transparency",
+        "requirement_text": "Notify each applicant before the interview that artificial intelligence may be used to analyze the applicant's video interview and consider the applicant's fitness for the position.",
+        "plain_language": "Before asking applicants to submit video interviews, you must tell them that AI may be used to analyze their video and evaluate their fit for the job.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "820 ILCS 42/5(1)"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-002",
+        "applies_to": "employer",
+        "category": "disclosure",
+        "requirement_text": "Provide each applicant with information before the interview explaining how the artificial intelligence works and what general types of characteristics it uses to evaluate applicants.",
+        "plain_language": "You must explain to applicants how your AI system works and what characteristics (e.g., facial expressions, tone, word choice) it uses to evaluate them.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "820 ILCS 42/5(2)"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-003",
+        "applies_to": "employer",
+        "category": "consumer_rights",
+        "requirement_text": "Obtain, before the interview, consent from the applicant to be evaluated by the artificial intelligence program as described in the information provided.",
+        "plain_language": "You must get written consent from applicants before using AI to evaluate their video interviews.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "820 ILCS 42/5(3)"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-004",
+        "applies_to": "employer",
+        "category": "consumer_rights",
+        "requirement_text": "An employer may not use artificial intelligence to evaluate applicants who have not consented to the use of artificial intelligence analysis.",
+        "plain_language": "You cannot use AI to evaluate any applicant who has not given you consent.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "820 ILCS 42/5"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-005",
+        "applies_to": "employer",
+        "category": "data_protection",
+        "requirement_text": "An employer may not share applicant videos, except with persons whose expertise or technology is necessary in order to evaluate an applicant's fitness for a position.",
+        "plain_language": "You can only share applicant video interviews with people who need to see them to evaluate the applicant. No other sharing is allowed.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "820 ILCS 42/10"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-006",
+        "applies_to": "employer",
+        "category": "data_protection",
+        "requirement_text": "Upon request from the applicant, employers, within 30 days after receipt of the request, must delete an applicant's interviews and instruct any other persons who received copies of the applicant video interviews to also delete the videos, including all electronically generated backup copies.",
+        "plain_language": "If an applicant asks you to delete their video interview, you must delete it within 30 days and tell anyone else who has copies to delete them too, including backups.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "820 ILCS 42/15"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-007",
+        "applies_to": "employer",
+        "category": "bias_testing",
+        "requirement_text": "An employer that relies solely upon an artificial intelligence analysis of a video interview to determine whether an applicant will be selected for an in-person interview must collect and report demographic data to the Department of Commerce and Economic Opportunity annually by December 31, including the race and ethnicity of applicants who are and are not afforded the opportunity for an in-person interview and applicants who are hired.",
+        "plain_language": "If you use AI as the sole factor to decide who gets in-person interviews, you must collect demographic data (race and ethnicity) and report it to DCEO every year by December 31.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "annual",
+        "citation": "820 ILCS 42/20"
+      },
+      {
+        "obligation_id": "IL-AIVIRA-OBL-008",
+        "applies_to": "employer",
+        "category": "bias_testing",
+        "requirement_text": "Employers must report demographic data collected in the 12-month period ending on November 30 to the Department by December 31 annually.",
+        "plain_language": "Your annual demographic report to DCEO must include data from December 1 through November 30, submitted by December 31.",
+        "deadline": "2020-01-01",
+        "recurring": true,
+        "frequency": "annual",
+        "citation": "820 ILCS 42/20"
+      }
+    ],
+
+    "penalties": {
+      "enforcing_body": "Illinois Department of Commerce and Economic Opportunity (DCEO) for demographic reporting oversight; Illinois Department of Human Rights for discrimination-related enforcement under companion law HB 3773 (effective 2026)",
+      "private_right_of_action": false,
+      "penalty_range": "No specific penalties enumerated in 820 ILCS 42. However, violations may trigger enforcement under the Illinois Human Rights Act (775 ILCS 5) with civil penalties up to $5,000 per violation for willful or repeated violations. Each affected applicant may constitute a separate violation.",
+      "cure_period": false,
+      "cure_period_days": null,
+      "notes": "The Video Interview Act itself (820 ILCS 42) does not specify enforcement mechanisms or penalties. DCEO receives demographic reports and analyzes data for racial bias, reporting findings to the Governor and General Assembly annually by July 1. Violations related to discrimination may be enforced through the Illinois Human Rights Act. The companion AI employment law (HB 3773, effective January 1, 2026) provides more robust enforcement through the Illinois Department of Human Rights."
+    },
+
+    "safe_harbors": [],
+
+    "cross_references": [
+      {
+        "related_law": "IL-HB3773",
+        "relationship": "complementary",
+        "category": "transparency",
+        "notes": "Illinois HB 3773 (effective January 1, 2026) amends the Illinois Human Rights Act to prohibit discriminatory use of AI in all employment decisions (not just video interviews) and requires notice before using AI. It provides enforcement through the Illinois Department of Human Rights with civil penalties up to $5,000 per violation. Works in conjunction with 820 ILCS 42 to create comprehensive AI employment regulation."
+      },
+      {
+        "related_law": "IL-BIPA",
+        "relationship": "complementary",
+        "category": "data_protection",
+        "notes": "Illinois Biometric Information Privacy Act (740 ILCS 14, effective 2008) regulates collection and use of biometric data including facial geometry and voice prints. BIPA may apply to AI video interview analysis if the system extracts facial recognition data or voiceprints. Employers using facial recognition in AI video interviews must comply with both BIPA consent/notice requirements and AIVIRA requirements."
+      },
+      {
+        "related_law": "NY-INT-1894",
+        "relationship": "similar_obligation",
+        "category": "bias_testing",
+        "notes": "New York City Local Law 144 (INT 1894-2020) requires annual bias audits for automated employment decision tools with public disclosure of results and prior notice to candidates. Similar to Illinois' demographic reporting requirement but with more prescriptive audit and disclosure obligations."
+      },
+      {
+        "related_law": "CO-SB24-205",
+        "relationship": "similar_obligation",
+        "category": "transparency",
+        "notes": "Colorado AI Act (C.R.S. § 6-1-1701 et seq.) has broader scope covering high-risk AI systems beyond video interviews but shares similar transparency and notice obligations. Colorado emphasizes risk management and impact assessments while Illinois AIVIRA focuses specifically on video interview consent and demographic monitoring."
+      },
+      {
+        "related_law": "MD-HB1202",
+        "relationship": "similar_obligation",
+        "category": "consent",
+        "notes": "Maryland House Bill 1202 requires waivers and consent for using facial recognition technology in interviews with annual reporting on its use. Similar consent requirements to Illinois but specifically limited to facial recognition technology in interviews."
+      }
+    ],
+
+    "change_log": [
+      {
+        "date": "2019-08-09",
+        "change_type": "new_law",
+        "description": "Governor J.B. Pritzker signed HB 2557 (Public Act 101-0260) into law, creating the Artificial Intelligence Video Interview Act. Illinois became the first state to regulate employer use of AI in video interviews."
+      },
+      {
+        "date": "2020-01-01",
+        "change_type": "new_law",
+        "description": "Artificial Intelligence Video Interview Act (820 ILCS 42) became effective, requiring employers to provide notice, explanation, and obtain consent before using AI to analyze video interviews, and to delete videos upon request within 30 days."
+      },
+      {
+        "date": "2024-08-09",
+        "change_type": "guidance",
+        "description": "Governor Pritzker signed HB 3773, amending the Illinois Human Rights Act to prohibit discriminatory AI use in all employment decisions (not just video interviews), effective January 1, 2026. This companion law enhances enforcement and extends protections beyond video interviews."
+      }
+    ]
+  }
+}

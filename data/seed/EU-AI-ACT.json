@@ -1,0 +1,358 @@
+{
+  "law": {
+    "law_id": "EU-AI-ACT",
+    "jurisdiction": "EU",
+    "common_name": "EU Artificial Intelligence Act",
+    "official_citation": "Regulation (EU) 2024/1689",
+    "status": "enacted",
+    "effective_date": "2026-08-02",
+    "last_updated": "2026-02-13",
+    "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+    "summary": "Comprehensive AI regulation establishing harmonised rules on artificial intelligence across the European Union. Takes a risk-based approach with four tiers: prohibited AI practices (unacceptable risk), high-risk AI systems subject to strict requirements, limited-risk AI with transparency obligations, and minimal-risk AI. Requires providers and deployers of high-risk AI systems to implement risk management, data governance, technical documentation, human oversight, accuracy/robustness/cybersecurity measures, and post-market monitoring. Applies to AI systems placed on the EU market or whose outputs affect EU residents, regardless of provider location.",
+
+    "applicability": {
+      "who_it_applies_to": ["provider", "deployer", "importer", "distributor", "product_manufacturer"],
+      "definitions": {
+        "provider": "A natural or legal person, public authority, agency or other body that develops an AI system or a general-purpose AI model or that has an AI system or a general-purpose AI model developed and places it on the market or puts the AI system into service under its own name or trademark, whether for payment or free of charge.",
+        "deployer": "A natural or legal person, public authority, agency or other body using an AI system under its authority except where the AI system is used in the course of a personal non-professional activity.",
+        "importer": "A natural or legal person located or established in the Union that places on the market an AI system that bears the name or trademark of a natural or legal person established in a third country.",
+        "distributor": "A natural or legal person in the supply chain, other than the provider or the importer, that makes an AI system available on the Union market.",
+        "product_manufacturer": "A natural or legal person that manufactures a product and integrates an AI system as a safety component or places it on the market or puts it into service under their own name or trademark."
+      },
+      "scope_conditions": "Applies to providers placing AI systems on the EU market or putting them into service in the EU, regardless of whether those providers are established or located within the EU or in a third country. Applies to deployers of AI systems located within the EU. Applies to providers and deployers of AI systems located in a third country where the output produced by the AI system is used in the EU. High-risk AI systems include those listed in Annex III (biometrics, critical infrastructure, education, employment, essential services, law enforcement, migration/border control, justice) and AI systems that are safety components of products covered by EU harmonisation legislation.",
+      "exemptions": [
+        "AI systems developed and put into service solely for scientific research and development",
+        "AI systems used exclusively for military, defence or national security purposes",
+        "AI components provided under free and open source licences (except when placed on the market or put into service as high-risk AI systems or subject to transparency obligations)",
+        "AI systems released under free and open-source licence unless they are high-risk or general-purpose AI models with systemic risk"
+      ],
+      "geographic_trigger": "Placing AI systems on the EU market OR putting AI systems into service in the EU OR use of AI system outputs in the EU"
+    },
+
+    "obligations": [
+      {
+        "obligation_id": "EU-AI-ACT-OBL-001",
+        "applies_to": "provider",
+        "category": "risk_assessment",
+        "requirement_text": "Providers of high-risk AI systems shall establish, implement, document and maintain a risk management system. The risk management system shall consist of a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating.",
+        "plain_language": "You must implement a documented, ongoing risk management system that continuously identifies and mitigates risks to health, safety, and fundamental rights throughout the AI system's lifecycle.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 9"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-002",
+        "applies_to": "provider",
+        "category": "data_protection",
+        "requirement_text": "High-risk AI systems which make use of techniques involving the training of AI models with data shall be developed on the basis of training, validation and testing data sets that meet the quality criteria referred to in paragraphs 2 to 5. Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible free of errors and complete in view of the intended purpose.",
+        "plain_language": "You must ensure training, validation, and testing datasets are relevant, representative, error-free, and complete for the AI system's intended purpose, with appropriate data governance and bias mitigation practices.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 10"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-003",
+        "applies_to": "provider",
+        "category": "documentation",
+        "requirement_text": "The technical documentation of a high-risk AI system shall be drawn up before that system is placed on the market or put into service and shall be kept up to date. The technical documentation shall be drawn up in such a way as to demonstrate that the high-risk AI system complies with the requirements set out in this Section and to provide national competent authorities and notified bodies with the information necessary to assess the compliance of the AI system with those requirements.",
+        "plain_language": "You must create and maintain comprehensive technical documentation before market placement that demonstrates compliance with all requirements and includes all elements specified in Annex IV.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 11 and Annex IV"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-004",
+        "applies_to": "provider",
+        "category": "documentation",
+        "requirement_text": "High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system. In order to ensure a level of traceability of the functioning of a high-risk AI system that is appropriate to the intended purpose of the system, logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk or leading to a substantial modification, and facilitate the post-market monitoring.",
+        "plain_language": "You must implement automatic logging capabilities that record events throughout the AI system's lifetime to enable traceability, risk identification, and post-market monitoring.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 12"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-005",
+        "applies_to": "provider",
+        "category": "transparency",
+        "requirement_text": "High-risk AI systems shall be designed and developed in such a way to ensure that their operation is sufficiently transparent to enable deployers to interpret the system's output and use it appropriately. An appropriate type and degree of transparency shall be ensured with a view to achieving compliance with the relevant obligations of the provider and deployer set out in Section 3.",
+        "plain_language": "You must design high-risk AI systems to be sufficiently transparent, enabling deployers to understand and appropriately interpret the system's outputs.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 13(1)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-006",
+        "applies_to": "provider",
+        "category": "transparency",
+        "requirement_text": "High-risk AI systems shall be accompanied by instructions for use in an appropriate digital format or otherwise that include concise, complete, correct and clear information that is relevant, accessible and comprehensible to deployers.",
+        "plain_language": "You must provide deployers with clear, comprehensive instructions for use in digital format that cover intended purpose, specifications, accuracy levels, human oversight measures, expected lifetime, and maintenance requirements.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "Article 13(3) and Annex IV"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-007",
+        "applies_to": "provider",
+        "category": "human_oversight",
+        "requirement_text": "High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use. Human oversight shall aim at preventing or minimising the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse.",
+        "plain_language": "You must design AI systems to enable effective human oversight with appropriate interface tools, allowing human overseers to understand capabilities, detect anomalies, and intervene or stop the system when needed.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 14"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-008",
+        "applies_to": "provider",
+        "category": "risk_assessment",
+        "requirement_text": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness and cybersecurity, and that they perform consistently in those respects throughout their lifecycle. The levels of accuracy and the relevant accuracy metrics of high-risk AI systems shall be declared in the accompanying instructions of use.",
+        "plain_language": "You must design AI systems to achieve and maintain appropriate levels of accuracy, robustness against errors and inconsistencies, and cybersecurity protections throughout their lifecycle, with declared accuracy metrics.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 15"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-009",
+        "applies_to": "provider",
+        "category": "governance",
+        "requirement_text": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: a strategy for regulatory compliance, techniques for the design, design control and design verification of the high-risk AI system, data management, and a post-market monitoring system.",
+        "plain_language": "You must establish and document a comprehensive quality management system covering regulatory compliance strategy, design controls, testing procedures, data management, risk management, and post-market monitoring.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 17"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-010",
+        "applies_to": "provider",
+        "category": "documentation",
+        "requirement_text": "Providers of high-risk AI systems shall keep the documentation referred to in Article 18(1) at the disposal of the national competent authorities and the notified bodies, as applicable, for a period of 10 years after the high-risk AI system has been placed on the market or put into service.",
+        "plain_language": "You must retain all technical documentation, quality management records, and compliance documentation for 10 years after placing the AI system on the market.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 18(1)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-011",
+        "applies_to": "provider",
+        "category": "incident_reporting",
+        "requirement_text": "Providers of high-risk AI systems placed on the Union market shall report any serious incident to the market surveillance authorities of the Member States where that incident occurred. Such notification shall be made immediately after the provider has established a causal link between the AI system and the serious incident or the reasonable likelihood of such a link, and, in any event, not later than 15 days after the provider becomes aware of the serious incident.",
+        "plain_language": "You must report serious incidents to market surveillance authorities immediately after establishing (or suspecting) a causal link between your AI system and the incident, within 15 days maximum (10 days for death, 2 days for very serious incidents).",
+        "deadline": "2026-08-02",
+        "recurring": false,
+        "frequency": null,
+        "citation": "Article 73(1)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-012",
+        "applies_to": "provider",
+        "category": "incident_reporting",
+        "requirement_text": "Providers shall establish a post-market monitoring system in a manner that is proportionate to the nature of the artificial intelligence technologies and the risks of the high-risk AI system. The post-market monitoring system shall be based on a post-market monitoring plan. The post-market monitoring plan shall be part of the technical documentation referred to in Annex IV. The Commission is empowered to adopt delegated acts to amend Annex IV by adding new elements to the post-market monitoring plan or to amend existing elements in that plan.",
+        "plain_language": "You must establish and document a post-market monitoring system proportionate to the AI system's risks, actively collecting and analyzing performance data throughout the system's lifetime to evaluate ongoing compliance.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 72"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-013",
+        "applies_to": "deployer",
+        "category": "risk_assessment",
+        "requirement_text": "Deployers of high-risk AI systems shall take appropriate technical and organisational measures to ensure they use such systems in accordance with the instructions for use accompanying the systems. The obligations set out in paragraphs 1 and 3 to 10 are without prejudice to other deployer obligations under Union or national law and to the deployer's freedom to organise its own resources and activities for the purpose of implementing the human oversight measures indicated by the provider.",
+        "plain_language": "You must use high-risk AI systems according to the provider's instructions and implement appropriate technical and organizational measures, including human oversight as specified by the provider.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 26(1)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-014",
+        "applies_to": "deployer",
+        "category": "human_oversight",
+        "requirement_text": "Deployers shall assign human oversight to natural persons who have the necessary competence, training and authority, as well as the necessary support. Without prejudice to paragraph 1, deployers shall, where applicable and proportionate in relation to the circumstances of use, ensure that the use of the high-risk AI system is subject to human oversight.",
+        "plain_language": "You must assign competent, trained personnel with appropriate authority to oversee the AI system's operation and ensure they can intervene or stop the system when necessary.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 26(2) and (4)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-015",
+        "applies_to": "deployer",
+        "category": "data_protection",
+        "requirement_text": "Deployers shall ensure that input data is relevant and sufficiently representative in view of the intended purpose of the high-risk AI system.",
+        "plain_language": "You must ensure that the data you input into the AI system is relevant and representative for the system's intended use.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 26(3)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-016",
+        "applies_to": "deployer",
+        "category": "documentation",
+        "requirement_text": "Deployers shall monitor the operation of the high-risk AI system on the basis of the instructions for use and, where relevant, inform providers in accordance with Article 72. Where deployers have reason to consider that the use of a high-risk AI system in accordance with the instructions for use may result in the AI system presenting a risk, they shall, without undue delay, inform the provider or distributor and suspend the use of that system.",
+        "plain_language": "You must monitor the AI system's operation according to instructions, inform the provider of any risks or malfunctions, and suspend use if the system presents risks even when used correctly.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 26(5) and (6)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-017",
+        "applies_to": "deployer",
+        "category": "documentation",
+        "requirement_text": "Deployers of high-risk AI systems shall keep the logs automatically generated by that high-risk AI system to the extent such logs are under their control. The logs shall be kept for a period that is appropriate in the light of the intended purpose of the high-risk AI system and applicable legal obligations under Union or national law. Deployers that are credit institutions regulated by Directive 2013/36/EU shall keep the logs as part of the documentation concerning internal governance, arrangements and processes.",
+        "plain_language": "You must retain logs automatically generated by the AI system for an appropriate period considering the system's purpose and applicable legal obligations (at least 6 months).",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 26(7)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-018",
+        "applies_to": "deployer",
+        "category": "risk_assessment",
+        "requirement_text": "Before putting into service or using a high-risk AI system at the workplace, deployers who are employers shall inform workers' representatives and the affected workers that they will be subject to the use of the high-risk AI system. This information shall be provided, where applicable, in accordance with the rules and procedures laid down in Union and national law and practice on information of workers and their representatives.",
+        "plain_language": "If you are an employer deploying high-risk AI in the workplace, you must inform workers' representatives and affected workers before putting the system into use.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "Article 26(9)"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-019",
+        "applies_to": "deployer",
+        "category": "risk_assessment",
+        "requirement_text": "Where the high-risk AI system is used for the purposes of law enforcement, migration, asylum or border control management and its use may have a significant impact on the fundamental rights of individuals, deployers shall, before putting the high-risk AI system into use, carry out a fundamental rights impact assessment.",
+        "plain_language": "If you deploy high-risk AI for law enforcement, migration, asylum, or border control that may significantly impact fundamental rights, you must conduct a fundamental rights impact assessment before use.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "per-deployment",
+        "citation": "Article 27"
+      },
+      {
+        "obligation_id": "EU-AI-ACT-OBL-020",
+        "applies_to": "provider",
+        "category": "bias_testing",
+        "requirement_text": "To the extent that it is strictly necessary for the purposes of ensuring bias detection and correction in relation to high-risk AI systems, the providers of such systems may process special categories of personal data referred to in Article 9(1) of Regulation (EU) 2016/679, in accordance with Article 10 of this Regulation, subject to appropriate safeguards for the fundamental rights and freedoms of natural persons.",
+        "plain_language": "You may process special categories of personal data (race, ethnicity, health, etc.) strictly for bias detection and correction purposes, subject to appropriate safeguards for fundamental rights.",
+        "deadline": "2026-08-02",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Article 10(5)"
+      }
+    ],
+
+    "penalties": {
+      "enforcing_body": "National market surveillance authorities and European Commission (EU AI Office)",
+      "private_right_of_action": false,
+      "penalty_range": "Tiered: €35M or 7% of global turnover (prohibited practices); €15M or 3% of turnover (high-risk violations); €7.5M or 1.5% of turnover (other obligations, including incorrect information to authorities)",
+      "cure_period": false,
+      "cure_period_days": null,
+      "notes": "Administrative fines determined by national authorities with maximum amounts specified in Article 99. Fines are subject to appropriateness and proportionality principles considering company size, nature of infringement, and cooperation with authorities. SMEs and start-ups receive lower fines. Non-compliance with prohibited AI practices (Article 5) carries the highest penalties: up to €35,000,000 or 7% of total worldwide annual turnover, whichever is higher. Enforcement coordinated by EU AI Office and national market surveillance authorities."
+    },
+
+    "safe_harbors": [
+      {
+        "description": "Presumption of conformity through compliance with harmonised standards. High-risk AI systems or general-purpose AI models in conformity with harmonised standards published in the Official Journal shall be presumed to be in conformity with mandatory requirements set out in Section 2 or Chapter V obligations.",
+        "framework_reference": "Harmonised standards developed by European standardisation organisations",
+        "citation": "Article 40"
+      },
+      {
+        "description": "Presumption of conformity through compliance with common specifications adopted by the Commission where harmonised standards do not exist or are insufficient. Compliance with common specifications confers presumption of conformity with AI Act requirements they cover.",
+        "framework_reference": "Commission-adopted common specifications",
+        "citation": "Article 41"
+      },
+      {
+        "description": "Voluntary codes of conduct to foster application of AI Act requirements to non-high-risk AI systems and voluntary additional commitments by high-risk AI system providers. Compliance with codes of conduct demonstrates commitment to best practices.",
+        "framework_reference": "Codes of conduct for voluntary commitments",
+        "citation": "Article 95"
+      },
+      {
+        "description": "Codes of practice for general-purpose AI model providers to demonstrate compliance with obligations under Articles 53 and 54. Adherence to approved codes of practice creates presumption of conformity with covered obligations.",
+        "framework_reference": "Codes of practice for general-purpose AI models",
+        "citation": "Article 56"
+      }
+    ],
+
+    "cross_references": [
+      {
+        "related_law": "CO-SB24-205",
+        "relationship": "divergent",
+        "category": "risk_assessment",
+        "notes": "Both laws take risk-based approach to AI regulation, but differ significantly in scope and enforcement. EU AI Act has broader territorial reach (any AI system affecting EU residents), more comprehensive risk classification (prohibited/high/limited/minimal vs Colorado's high-risk focus), and substantially higher penalties (€35M or 7% turnover vs $2,000-$20,000). EU Act requires conformity assessment and CE marking for high-risk systems; Colorado provides safe harbor for NIST AI RMF compliance. EU Act covers wider range of high-risk use cases including biometrics, critical infrastructure, and law enforcement beyond Colorado's consumer protection focus."
+      },
+      {
+        "related_law": "CA-CCPA-ADMT",
+        "relationship": "similar_obligation",
+        "category": "transparency",
+        "notes": "Both regulations impose transparency requirements for automated decision-making, but with different approaches. EU AI Act Article 13 requires transparency in system design and instructions for use for high-risk systems; California ADMT regulations focus on consumer-facing notice and opt-out rights. EU Act has broader scope covering B2B AI systems and public sector use; CCPA ADMT is limited to consumer personal information processing. EU enforcement is through market surveillance authorities with significant administrative fines; California enforcement is through AG and private right of action for CCPA violations."
+      },
+      {
+        "related_law": "NYC-LL-144",
+        "relationship": "similar_obligation",
+        "category": "bias_testing",
+        "notes": "Both laws require bias testing for AI systems used in employment decisions. EU AI Act Article 10 requires training data to be free of bias with data governance practices for bias detection and mitigation across all high-risk systems including employment. NYC Local Law 144 specifically requires annual bias audits for automated employment decision tools with public disclosure of results. EU Act has broader scope beyond employment and higher penalties; NYC law is enforcement-specific to employment screening in NYC with civil penalties up to $1,500 per violation. EU Act allows processing of special category data for bias testing purposes."
+      },
+      {
+        "related_law": "IL-AIVIRA",
+        "relationship": "similar_obligation",
+        "category": "transparency",
+        "notes": "Both laws require transparency in AI-generated content, but Illinois AIVIRA focuses specifically on video and audio deepfakes while EU AI Act Article 50 has broader transparency requirements for AI-generated content including text, images, audio, and video. EU Act requires marking of AI-generated content and disclosure when users interact with AI systems; Illinois focuses on consent requirements for digital replicas and deepfake creation. Different enforcement mechanisms: EU through market surveillance with administrative fines up to €7.5M or 1.5% of turnover; Illinois through private right of action with statutory damages."
+      },
+      {
+        "related_law": "TX-TRAIGA",
+        "relationship": "divergent",
+        "category": "transparency",
+        "notes": "Texas TRAIGA focuses narrowly on transparency requirements for generative AI used to create synthetic media for political purposes, while EU AI Act has comprehensive transparency obligations across all AI system risk levels. EU Act's transparency requirements (Articles 13, 50, 52) are broader, covering instructions for use, AI-generated content labeling, and disclosure of AI interaction. Texas enforcement is limited to AG civil actions; EU enforcement includes substantial administrative fines. EU Act's prohibited practices (Article 5) ban certain manipulative AI uses that Texas does not address."
+      }
+    ],
+
+    "change_log": [
+      {
+        "date": "2024-06-13",
+        "change_type": "new_law",
+        "description": "Regulation (EU) 2024/1689 adopted by European Parliament and Council, establishing the European Union's comprehensive artificial intelligence regulatory framework."
+      },
+      {
+        "date": "2024-07-12",
+        "change_type": "new_law",
+        "description": "AI Act published in Official Journal of the European Union (OJ L, 2024/1689)."
+      },
+      {
+        "date": "2024-08-01",
+        "change_type": "new_law",
+        "description": "AI Act entered into force, 20 days after publication in the Official Journal."
+      },
+      {
+        "date": "2025-02-02",
+        "change_type": "enforcement_action",
+        "description": "Prohibited AI practices (Article 5) became enforceable. First enforcement milestone with fines up to €35M or 7% of global turnover for non-compliance with prohibitions on manipulative AI, social scoring, real-time biometric identification (with exceptions), and emotion recognition in workplace/education."
+      },
+      {
+        "date": "2025-04-01",
+        "change_type": "guidance",
+        "description": "European Commission published Guidelines on Prohibited AI Practices under Article 5, providing detailed interpretation of banned AI applications including subliminal manipulation, exploitation of vulnerabilities, social scoring systems, and biometric categorization."
+      },
+      {
+        "date": "2025-08-02",
+        "change_type": "enforcement_action",
+        "description": "Obligations for general-purpose AI models (Chapter V) became applicable, including transparency requirements, technical documentation, copyright compliance, and systemic risk assessments for models with high-impact capabilities. EU AI Office began oversight of GPAI models."
+      },
+      {
+        "date": "2026-08-02",
+        "change_type": "enforcement_action",
+        "description": "Full applicability of AI Act requirements for high-risk AI systems (Chapters III, Articles 6-51), including obligations for providers (risk management, data governance, technical documentation, accuracy/robustness/cybersecurity, human oversight, transparency) and deployers (monitoring, human oversight, log retention, fundamental rights impact assessments). All transparency obligations under Article 50 (AI-generated content labeling) become enforceable. Majority of AI Act provisions in force."
+      }
+    ]
+  }
+}

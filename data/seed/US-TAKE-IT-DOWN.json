@@ -1,0 +1,190 @@
+{
+  "law": {
+    "law_id": "US-TAKE-IT-DOWN",
+    "jurisdiction": "US",
+    "common_name": "TAKE IT DOWN Act",
+    "official_citation": "Public Law 119-12, 18 U.S.C. § 1801 et seq.",
+    "status": "enacted",
+    "effective_date": "2026-05-19",
+    "last_updated": "2026-02-13",
+    "source_url": "https://www.congress.gov/bill/119th-congress/senate-bill/146",
+    "summary": "Federal law prohibiting the nonconsensual publication of intimate images and AI-generated deepfakes. Requires covered platforms (websites, apps, and online services that host user-generated content) to establish a notice-and-removal process to remove nonconsensual intimate visual depictions within 48 hours of valid notification. Criminalizes knowingly publishing intimate images without consent. Enforced by the Federal Trade Commission with civil penalties up to $53,088 per violation.",
+
+    "applicability": {
+      "who_it_applies_to": ["covered_platform", "individual_publisher"],
+      "definitions": {
+        "covered_platform": "A website, online service, online application, or mobile application that serves the public and either (1) primarily provides a forum for user-generated content or (2) publishes, curates, hosts, or makes available nonconsensual intimate visual depictions in the regular course of trade or business. Uses the 'interactive computer service' definition from Section 230 of the Communications Decency Act (47 U.S.C. § 230).",
+        "intimate_visual_depiction": "Any visual depiction (including photographs, videos, digital images, and digitally created deepfakes) of an identifiable individual in which the individual is nude, depicted engaging in sexually explicit conduct, or depicted in a state of undress exposing intimate body parts (including the genitals, pubic area, anus, or female nipple).",
+        "nonconsensual": "Published without the consent of the depicted individual, obtained or created under circumstances where the individual had a reasonable expectation of privacy, not voluntarily exposed in a public or commercial setting, and not a matter of public concern.",
+        "individual_publisher": "Any person who uses an interactive computer service to knowingly publish nonconsensual intimate visual depictions."
+      },
+      "scope_conditions": "Applies to covered platforms that serve the public and host user-generated content or nonconsensual intimate imagery. Criminal provisions apply to any individual who knowingly publishes such depictions using interactive computer services.",
+      "exemptions": [
+        "Broadband internet access service providers",
+        "Email service providers",
+        "Websites or apps consisting primarily of preselected (non-user-generated) content where interactive features are incidental",
+        "Law enforcement or intelligence agency investigations",
+        "Disclosures made in good faith for legal proceedings",
+        "Disclosures for medical treatment or education",
+        "Reporting unlawful conduct to authorities",
+        "Possession or publication of intimate depictions of oneself",
+        "News reporting with legitimate public interest (limited protection, subject to interpretation)"
+      ],
+      "geographic_trigger": "Use of interactive computer services accessible in the United States OR platforms serving U.S. users"
+    },
+
+    "obligations": [
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-001",
+        "applies_to": "covered_platform",
+        "category": "incident_reporting",
+        "requirement_text": "A covered platform shall establish a process by which an identifiable individual or their authorized representative can notify the platform of nonconsensual intimate visual depictions. The notification must be in writing and include: (1) identification of and information reasonably sufficient to locate the depiction; (2) a brief statement of good faith belief that the depiction is nonconsensual, including relevant verification information; and (3) signature and contact information of the individual or representative.",
+        "plain_language": "You must create a formal process that allows individuals to report nonconsensual intimate images or deepfakes, with clear requirements for what information must be included in the notification.",
+        "deadline": "2026-05-19",
+        "recurring": false,
+        "frequency": null,
+        "citation": "Public Law 119-12, Section 4"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-002",
+        "applies_to": "covered_platform",
+        "category": "consumer_rights",
+        "requirement_text": "Upon receiving a valid notice, a covered platform must remove the nonconsensual intimate visual depiction as soon as possible but no later than 48 hours after receiving notice.",
+        "plain_language": "You must take down reported nonconsensual intimate images or deepfakes within 48 hours of receiving a valid removal request.",
+        "deadline": "2026-05-19",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Public Law 119-12, Section 4(b)"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-003",
+        "applies_to": "covered_platform",
+        "category": "consumer_rights",
+        "requirement_text": "Within 48 hours of receiving notice, a covered platform must make reasonable efforts to identify and remove any known identical copies of the nonconsensual intimate visual depiction.",
+        "plain_language": "You must use duplicate detection tools or image hashing to find and remove copies of the same nonconsensual image across your platform within the 48-hour window.",
+        "deadline": "2026-05-19",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Public Law 119-12, Section 4(b)"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-004",
+        "applies_to": "covered_platform",
+        "category": "transparency",
+        "requirement_text": "A covered platform shall make publicly available information about its notice-and-removal process, including how individuals can submit notifications and how the platform will respond.",
+        "plain_language": "You must publish clear information about your takedown process so individuals know how to report nonconsensual intimate images.",
+        "deadline": "2026-05-19",
+        "recurring": false,
+        "frequency": null,
+        "citation": "Public Law 119-12, Section 4"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-005",
+        "applies_to": "covered_platform",
+        "category": "human_oversight",
+        "requirement_text": "Covered platforms must verify that notifications meet the statutory requirements before taking action, including assessing good faith belief statements and verification information provided by the reporting individual.",
+        "plain_language": "You must review removal requests to ensure they meet legal requirements before removing content, but you still must act within 48 hours.",
+        "deadline": "2026-05-19",
+        "recurring": true,
+        "frequency": "ongoing",
+        "citation": "Public Law 119-12, Section 4(a)"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-006",
+        "applies_to": "individual_publisher",
+        "category": "other",
+        "requirement_text": "It is unlawful for any person to use an interactive computer service to knowingly publish an intimate visual depiction of an identifiable adult if: (1) it was obtained or created under circumstances where the person knew or reasonably should have known the adult had a reasonable expectation of privacy; (2) what is depicted was not voluntarily exposed by the adult in a public or commercial setting; (3) what is depicted is not a matter of public concern; and (4) publication causes harm.",
+        "plain_language": "You cannot publish intimate images or videos of identifiable adults without their consent if they had a reasonable expectation of privacy. This is a criminal offense.",
+        "deadline": "2025-05-19",
+        "recurring": false,
+        "frequency": null,
+        "citation": "18 U.S.C. § 1801"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-007",
+        "applies_to": "individual_publisher",
+        "category": "other",
+        "requirement_text": "It is unlawful for any person to use an interactive computer service to knowingly publish an intimate visual depiction of an identifiable individual minor with intent to abuse, humiliate, harass, or degrade the minor or arouse or gratify the sexual desire of any person.",
+        "plain_language": "Publishing intimate images of minors without consent is a federal crime with strict liability. No matter the intent, this is prohibited.",
+        "deadline": "2025-05-19",
+        "recurring": false,
+        "frequency": null,
+        "citation": "18 U.S.C. § 1801"
+      },
+      {
+        "obligation_id": "US-TAKE-IT-DOWN-OBL-008",
+        "applies_to": "individual_publisher",
+        "category": "other",
+        "requirement_text": "Any person who intentionally threatens to commit an offense under this section for the purpose of intimidation, coercion, extortion, or to create mental distress shall be fined under title 18, United States Code, imprisoned not more than 30 months, or both.",
+        "plain_language": "Threatening to publish nonconsensual intimate images (sextortion) is a federal crime punishable by up to 30 months in prison.",
+        "deadline": "2025-05-19",
+        "recurring": false,
+        "frequency": null,
+        "citation": "18 U.S.C. § 1801"
+      }
+    ],
+
+    "penalties": {
+      "enforcing_body": "Federal Trade Commission (FTC) for platform obligations; Department of Justice for criminal provisions",
+      "private_right_of_action": false,
+      "penalty_range": "Civil: Up to $53,088 per violation for platforms. Criminal: Fines and imprisonment up to 30 months for threats; additional criminal penalties for nonconsensual publication. Asset forfeiture provisions apply.",
+      "cure_period": false,
+      "cure_period_days": null,
+      "notes": "The FTC enforces platform notice-and-removal obligations under Section 18 of the FTC Act (15 U.S.C. § 45), treating failures to comply as unfair or deceptive acts or practices (UDAP violations). Civil penalties are currently $53,088 per violation. The FTC can seek civil penalties, consumer redress, and injunctive relief. FTC jurisdiction extends to nonprofit entities. Criminal provisions are enforced by DOJ with penalties including fines, imprisonment, and asset forfeiture. Good faith safe harbor protects platforms that mistakenly remove content while attempting to comply."
+    },
+
+    "safe_harbors": [
+      {
+        "description": "Good faith safe harbor for covered platforms that remove intimate visual depictions in error while attempting to comply with the Act's requirements.",
+        "framework_reference": "Good faith compliance standard",
+        "citation": "Public Law 119-12, Section 4(d)"
+      },
+      {
+        "description": "Section 230 immunity remains intact for editorial decisions unrelated to the specific notice-and-removal obligations, though platforms must still comply with the 48-hour takedown requirement.",
+        "framework_reference": "Communications Decency Act Section 230 (47 U.S.C. § 230)",
+        "citation": "47 U.S.C. § 230"
+      }
+    ],
+
+    "cross_references": [
+      {
+        "related_law": "CA-INTIMATE-PRIVACY",
+        "relationship": "complementary",
+        "category": "consumer_rights",
+        "notes": "California Civil Code § 1708.85 provides a private right of action for victims of nonconsensual intimate image distribution. California maintains stricter timelines than the federal 48-hour standard and has not signaled intent to harmonize."
+      },
+      {
+        "related_law": "IL-INTIMATE-PRIVACY",
+        "relationship": "complementary",
+        "category": "consumer_rights",
+        "notes": "Illinois has upheld its nonconsensual pornography laws against First Amendment challenges. Illinois maintains stricter timelines than the federal standard."
+      },
+      {
+        "related_law": "NY-INTIMATE-PRIVACY",
+        "relationship": "complementary",
+        "category": "consumer_rights",
+        "notes": "New York maintains stricter timelines than the federal 48-hour standard and has not signaled intent to harmonize with federal law."
+      },
+      {
+        "related_law": "TX-INTIMATE-PRIVACY",
+        "relationship": "complementary",
+        "category": "consumer_rights",
+        "notes": "Texas has upheld its nonconsensual pornography laws against free speech challenges at the state supreme court level."
+      },
+      {
+        "related_law": "VA-INTIMATE-PRIVACY",
+        "relationship": "complementary",
+        "category": "consumer_rights",
+        "notes": "Virginia has comprehensive intimate privacy protections that complement federal TAKE IT DOWN Act requirements."
+      }
+    ],
+
+    "change_log": [
+      {
+        "date": "2025-05-19",
+        "change_type": "new_law",
+        "description": "President Donald Trump signs the TAKE IT DOWN Act (S.146) into law as Public Law 119-12. Criminal provisions take effect immediately. Platform notice-and-removal obligations take effect one year later (May 19, 2026)."
+      }
+    ]
+  }
+}
