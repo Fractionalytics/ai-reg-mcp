@@ -42,7 +42,7 @@ These are the things that need to happen next, roughly in priority order:
    - Template/tooling for the curation process
 
 3. **Naming and identity**:
-   - Project/product name (RegData MCP is a working title)
+   - Project/product name (AI-Reg-MCP is a working title)
    - Domain registration
    - GitHub organization/repo setup
 
@@ -100,7 +100,7 @@ The Daloopa/CarbonArc model that inspired this:
 ## Files in This Project
 
 ```
-regdata-project/
+ai-reg-mcp/
 ├── README.md                      # Project overview and status
 ├── docs/
 │   ├── market-analysis.md         # Competitive landscape, buyer personas, market dynamics

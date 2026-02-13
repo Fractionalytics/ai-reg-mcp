@@ -1,4 +1,4 @@
-# Product Strategy: RegData MCP
+# Product Strategy: AI-Reg-MCP
 
 ## Core Principle
 
