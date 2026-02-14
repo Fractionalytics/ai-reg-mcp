@@ -1,0 +1,51 @@
+{
+  "name": "ai-reg-mcp-server",
+  "version": "0.1.0",
+  "description": "Structured, queryable US AI and privacy law data via MCP. Access 9 curated laws with 88 compliance obligations through natural language queries.",
+  "author": "David Smith <david@fractionalytics.io>",
+  "homepage": "https://github.com/Fractionalytics/ai-reg-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fractionalytics/ai-reg-mcp.git"
+  },
+  "license": "MIT",
+  "installation": {
+    "npm": "ai-reg-mcp-server"
+  },
+  "usage": {
+    "command": "npx",
+    "args": ["-y", "ai-reg-mcp-server"]
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "search_laws",
+        "description": "Search for laws by jurisdiction, keyword, status, or effective date"
+      },
+      {
+        "name": "get_obligations",
+        "description": "Get detailed compliance obligations from specific laws"
+      },
+      {
+        "name": "compare_jurisdictions",
+        "description": "Compare requirements across multiple jurisdictions"
+      },
+      {
+        "name": "get_changes",
+        "description": "View regulatory changes over time"
+      }
+    ]
+  },
+  "tags": ["ai-regulation", "compliance", "privacy-law", "regulatory-data", "legal-tech"],
+  "coverage": [
+    "Colorado AI Act (SB24-205)",
+    "California ADMT Regulations",
+    "California FEHA AI Regs",
+    "NYC Local Law 144",
+    "Illinois AIVIRA",
+    "Texas TRAIGA",
+    "Utah SB226",
+    "EU AI Act",
+    "US TAKE IT DOWN Act"
+  ]
+}
