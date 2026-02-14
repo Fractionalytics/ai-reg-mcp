@@ -8,7 +8,12 @@
       "Bash(netstat:*)",
       "Bash(taskkill:*)",
       "Bash(ping:*)",
-      "Bash(tsx scripts/test-client.ts:*)"
+      "Bash(tsx scripts/test-client.ts:*)",
+      "Bash(npm whoami:*)",
+      "Bash(npm login:*)",
+      "Bash(npm view:*)",
+      "Bash(npm publish:*)",
+      "Bash(npx ai-reg-mcp-server:*)"
     ]
   }
 }

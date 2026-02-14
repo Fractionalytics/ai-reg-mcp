@@ -1,11 +1,20 @@
 {
-  "name": "@ai-reg-mcp/server",
+  "name": "ai-reg-mcp-server",
   "version": "0.1.0",
   "description": "Structured, queryable US AI and privacy law data via MCP",
   "type": "module",
   "main": "dist/mcp-server/index.js",
   "bin": {
     "ai-reg-mcp": "dist/mcp-server/index.js"
+  },
+  "author": "David Smith <david@fractionalytics.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fractionalytics/ai-reg-mcp.git"
+  },
+  "homepage": "https://github.com/Fractionalytics/ai-reg-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Fractionalytics/ai-reg-mcp/issues"
   },
   "scripts": {
     "build": "tsc",
