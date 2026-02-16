@@ -1,13 +1,36 @@
 # Launch Checklist - Distribution Actions
 
-## ✅ Completed
+## Architecture (v0.2.0)
+
+**Two-repository setup:**
+- **ai-reg-mcp** (public): Thin MCP client on npm, calls remote API
+- **ai-reg-api** (private): Hono API on Vercel Edge, Turso database, API key auth
+
+Users get instant API key at https://ai-reg-api.vercel.app
+
+## ✅ Completed (v0.1.0)
 
 - [x] Published to npm (ai-reg-mcp-server v0.1.0)
 - [x] Created MCP registry files (.well-known/mcp/server.json, smithery.yaml)
 - [x] Wrote submission content for directories
 - [x] Wrote Reddit post for r/ClaudeAI
 
-## 🎯 Action Items
+## ✅ Completed (v0.2.0)
+
+- [x] Built private backend API (ai-reg-api)
+- [x] Deployed to Vercel with Turso database
+- [x] Implemented API key authentication
+- [x] Created signup page with instant key generation
+- [x] Refactored MCP client to call remote API
+- [x] Updated all documentation for two-repo architecture
+
+## 🎯 Action Items (v0.2.0 Launch)
+
+### 0. Pre-Launch Tasks
+- [ ] `npm deprecate ai-reg-mcp-server@0.1.0 "Upgrade to v0.2.0 with API key support..."`
+- [ ] `npm publish` v0.2.0
+- [ ] Test E2E: signup → API key → Claude Desktop → query all 4 tools
+- [ ] Verify all 6 API endpoints working live
 
 ### 1. Anthropic MCP Directory (Choose ONE method)
 
@@ -57,19 +80,21 @@ smithery deploy
 
 ### Daily (First Week)
 - [ ] Check npm downloads: `npm view ai-reg-mcp-server`
-- [ ] Check Tally waitlist signups: https://tally.so/r/Y5W7Vv
+- [ ] Check API key signups (Turso `api_keys` table)
+- [ ] Check API usage metrics (Turso `rate_limits` table)
 - [ ] Respond to Reddit comments
 - [ ] Check GitHub issues/stars
 
 ### Weekly
-- [ ] Review waitlist feedback (what features do people want?)
-- [ ] Track which laws people ask about most
+- [ ] Review API usage patterns (which endpoints are popular?)
+- [ ] Track which laws people query most
 - [ ] Engage with users who have questions
+- [ ] Monitor Vercel/Turso metrics
 
 ### Monthly
-- [ ] Publish data update (v0.1.1) if laws changed
-- [ ] Send update to waitlist subscribers
-- [ ] Assess traction: Should you build v0.2 or start on paid API?
+- [ ] Update laws server-side (instant propagation to all users)
+- [ ] Send update to API key holders
+- [ ] Assess traction: npm downloads + API signups + usage
 
 ## 📦 Before You Start (Git)
 

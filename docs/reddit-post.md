@@ -54,14 +54,11 @@ Once installed, try questions like:
 
 Claude will query the MCP server and give you **precise, cited answers** from the actual law text.
 
-## Installation (30 seconds)
+## Installation (60 seconds)
 
-1. Install via npx:
-```bash
-npx ai-reg-mcp-server
-```
+1. **Get a free API key**: Visit https://ai-reg-api.vercel.app and enter your email. You'll get a key instantly.
 
-2. Add to your Claude Desktop config (`claude_desktop_config.json`):
+2. **Add to your Claude Desktop config** (`claude_desktop_config.json`):
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
@@ -71,38 +68,41 @@ npx ai-reg-mcp-server
   "mcpServers": {
     "ai-reg-mcp": {
       "command": "npx",
-      "args": ["-y", "ai-reg-mcp-server"]
+      "args": ["-y", "ai-reg-mcp-server"],
+      "env": {
+        "AI_REG_API_KEY": "aireg_live_your_key_here"
+      }
     }
   }
 }
 ```
 
-3. Restart Claude Desktop
+3. **Restart Claude Desktop**
 
 That's it! Look for the 🔌 icon to confirm it's connected.
 
 ## Tech Details (for the curious)
 
-- **Storage**: SQLite via sql.js (zero native dependencies, works everywhere)
+- **Architecture**: Thin MCP client → Remote API (Vercel Edge) → Turso database
 - **Transport**: MCP stdio (local, secure)
-- **Data**: Hand-curated from official sources, validated against Zod schemas
-- **Tests**: 45/45 passing
+- **Data**: Hand-curated from official sources, server-side updates (instant propagation)
+- **Tests**: 21/21 passing
 - **License**: MIT (free to use)
+- **Free tier**: 100 req/hr, 1000 req/day, 10000 req/month
 
 ## Limitations & Roadmap
 
-**Current version (v0.1.0):**
+**Current version (v0.2.0):**
 - 9 laws (Tier 1 only)
-- Snapshot-based (updated monthly via npm)
+- API key required (free, instant signup)
 - Keyword search only
 
-**Coming soon** (paid API, not free MCP):
+**Coming soon** (paid tier):
 - 30+ laws
-- Real-time updates
+- Higher rate limits
 - Semantic search
-- REST API access
-
-If you want early access to the paid version, there's a [waitlist here](https://tally.so/r/Y5W7Vv).
+- Priority support
+- Commercial use license
 
 ## Why I Built This
 

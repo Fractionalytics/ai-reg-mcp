@@ -1,6 +1,6 @@
 import { z } from "zod";
-import type { Database } from "sql.js";
-import { getChanges } from "../../data/queries.js";
+import type { AiRegApiClient } from "../../api-client.js";
+import { formatErrorResponse } from "./format-error.js";
 
 export const getChangesToolName = "get_changes";
 
@@ -27,36 +27,37 @@ export const getChangesToolConfig = {
   },
 };
 
-export function createGetChangesHandler(db: Database) {
+export function createGetChangesHandler(client: AiRegApiClient) {
   return async (args: {
     since?: string;
     until?: string;
     law_id?: string;
     change_type?: string;
   }) => {
-    const changes = getChanges(
-      db,
-      args as Parameters<typeof getChanges>[1]
-    );
+    try {
+      const changes = await client.getChanges(args as any);
 
-    if (changes.length === 0) {
+      if (changes.length === 0) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "No changes found for the specified criteria.",
+            },
+          ],
+        };
+      }
+
       return {
         content: [
           {
             type: "text" as const,
-            text: "No changes found for the specified criteria.",
+            text: JSON.stringify(changes, null, 2),
           },
         ],
       };
+    } catch (error) {
+      return formatErrorResponse(error);
     }
-
-    return {
-      content: [
-        {
-          type: "text" as const,
-          text: JSON.stringify(changes, null, 2),
-        },
-      ],
-    };
   };
 }

@@ -1,6 +1,6 @@
 {
   "name": "ai-reg-mcp-server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Structured, queryable US AI and privacy law data via MCP. Access 9 curated laws with 88 compliance obligations through natural language queries.",
   "author": "David Smith <david@fractionalytics.io>",
   "homepage": "https://github.com/Fractionalytics/ai-reg-mcp",
@@ -14,7 +14,10 @@
   },
   "usage": {
     "command": "npx",
-    "args": ["-y", "ai-reg-mcp-server"]
+    "args": ["-y", "ai-reg-mcp-server"],
+    "env": {
+      "AI_REG_API_KEY": "Get free key at https://ai-reg-api.vercel.app"
+    }
   },
   "capabilities": {
     "tools": [
