@@ -1,8 +1,8 @@
 # AI-Reg-MCP Project Status
 
 **Last Updated**: February 16, 2026
-**Version**: 0.2.0 (thin client — not yet published to npm)
-**Status**: Backend LIVE, MCP client ready to publish
+**Version**: 0.2.0 (published to npm)
+**Status**: LIVE - Backend API + MCP client v0.2.0 published
 
 ## Architecture (v0.2.0)
 
@@ -60,10 +60,10 @@ Claude Desktop  →  MCP Server (npm)  →  AI-Reg API (Vercel Edge)  →  Turso
 - [x] Rewrote tests (21 passing, all mocked)
 - [x] Updated README, CLAUDE.md, .well-known/mcp/server.json
 
-### Phase 3: Publish & Deprecate — NOT STARTED
-- [ ] `npm deprecate ai-reg-mcp-server@0.1.0` with upgrade message
-- [ ] `npm publish` v0.2.0
-- [ ] Test full E2E: signup → key → Claude Desktop → query
+### Phase 3: Publish & Deprecate — COMPLETE
+- [x] `npm deprecate ai-reg-mcp-server@0.1.0` with upgrade message
+- [x] `npm publish` v0.2.0
+- [x] Test full E2E: signup → key → MCP Inspector → query (4 tools verified)
 - [ ] Update MCP directory listings
 
 ### Phase 4: Distribute — NOT STARTED
@@ -155,4 +155,4 @@ Claude Desktop  →  MCP Server (npm)  →  AI-Reg API (Vercel Edge)  →  Turso
 
 ---
 
-**Next action**: Phase 3 — `npm deprecate` v0.1.0 + `npm publish` v0.2.0
+**Next action**: Phase 3 Task 4 — Update MCP directory listings, then Phase 4 — Distribution
