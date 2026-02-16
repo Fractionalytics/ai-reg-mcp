@@ -4,7 +4,7 @@ Structured, queryable US AI and privacy law data via Model Context Protocol (MCP
 
 ## What is this?
 
-AI-Reg-MCP is an MCP server that provides Claude (and other MCP clients) with instant access to structured data about US AI regulations, privacy laws, and compliance requirements. No more searching through PDFs or legal websites—get precise regulatory information through natural language queries.
+AI-Reg-MCP is an MCP server that provides Claude (and other MCP clients) with instant access to structured data about US AI regulations, privacy laws, and compliance requirements. No more searching through PDFs or legal websites — get precise regulatory information through natural language queries.
 
 ## Features
 
@@ -13,27 +13,17 @@ AI-Reg-MCP is an MCP server that provides Claude (and other MCP clients) with in
 - **32 tracked regulatory changes** with dates and impact descriptions
 - **Natural language jurisdiction queries** (e.g., "Colorado" or "CO" both work)
 - **Cross-jurisdictional comparisons** to find the most restrictive requirements
-- **Zero native dependencies** (works on all platforms via sql.js)
+- **Zero native dependencies** — works on all platforms
 
-> 🚀 **Want more?** This free version includes 9 Tier 1 laws. For 30+ laws, real-time updates, semantic search, and API access, [**join the waitlist**](https://tally.so/r/Y5W7Vv) for our paid API (launching soon).
+## Quick Start
 
-## Installation
+### 1. Get a Free API Key
 
-### Prerequisites
+Visit **[ai-reg-api.vercel.app](https://ai-reg-api.vercel.app)** and enter your email. You'll get an API key instantly.
 
-- Node.js 18+ (tested on v24.11.0)
-- Claude Desktop or any MCP-compatible client
+### 2. Configure Claude Desktop
 
-### Using with Claude Desktop
-
-1. Install the server (it will be available via npx, no global install needed):
-
-```bash
-# Test that it works
-npx ai-reg-mcp-server
-```
-
-2. Add to your Claude Desktop config (`claude_desktop_config.json`):
+Add to your Claude Desktop config (`claude_desktop_config.json`):
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
@@ -43,15 +33,18 @@ npx ai-reg-mcp-server
   "mcpServers": {
     "ai-reg-mcp": {
       "command": "npx",
-      "args": ["-y", "ai-reg-mcp-server"]
+      "args": ["-y", "ai-reg-mcp-server"],
+      "env": {
+        "AI_REG_API_KEY": "aireg_live_your_key_here"
+      }
     }
   }
 }
 ```
 
-3. Restart Claude Desktop
+### 3. Restart Claude Desktop
 
-4. You should see the 🔌 icon indicating MCP servers are connected
+You should see the MCP server connected. Now ask Claude about AI regulations.
 
 ## Usage
 
@@ -65,136 +58,96 @@ Once connected, you can ask Claude questions like:
 
 ## Available Tools
 
-The server provides 4 MCP tools:
-
 ### 1. `search_laws`
 Search for laws by jurisdiction, keyword, status, or effective date.
-
-**Example**: Find all laws about "algorithmic discrimination" in Colorado
 
 ### 2. `get_obligations`
 Get detailed compliance obligations from specific laws.
 
-**Example**: Show all transparency obligations in the Colorado AI Act
-
 ### 3. `compare_jurisdictions`
 Compare requirements across multiple jurisdictions.
-
-**Example**: Compare risk assessment requirements in CO, CA, and NYC
 
 ### 4. `get_changes`
 View regulatory changes over time.
 
-**Example**: Show all enforcement actions since January 2025
+## Supported Laws (v0.2.0)
 
-## Supported Laws (v0.1.0)
+- **Colorado AI Act (SB24-205)** — High-risk AI systems, algorithmic discrimination
+- **California ADMT Regulations (CCPA)** — Automated decision-making technology
+- **California FEHA AI Regs** — AI/ADS in employment decisions
+- **NYC Local Law 144** — Automated employment decision tools
+- **Illinois AIVIRA** — AI video interviews
+- **Texas TRAIGA** — Responsible AI governance
+- **Utah SB226** — AI consumer protection
+- **EU AI Act** — High-risk AI systems (EU)
+- **US TAKE IT DOWN Act** — NCII removal requirements
 
-- **Colorado AI Act (SB24-205)** - High-risk AI systems, algorithmic discrimination
-- **California ADMT Regulations (CCPA)** - Automated decision-making technology
-- **California FEHA AI Regs** - AI/ADS in employment decisions
-- **NYC Local Law 144** - Automated employment decision tools
-- **Illinois AIVIRA** - AI video interviews
-- **Texas TRAIGA** - Responsible AI governance
-- **Utah SB226** - AI consumer protection
-- **EU AI Act** - High-risk AI systems (EU)
-- **US TAKE IT DOWN Act** - NCII removal requirements
+## Configuration
+
+| Environment Variable | Required | Default | Description |
+|---------------------|----------|---------|-------------|
+| `AI_REG_API_KEY` | Yes | — | Your API key from [ai-reg-api.vercel.app](https://ai-reg-api.vercel.app) |
+| `AI_REG_API_URL` | No | `https://ai-reg-api.vercel.app` | API base URL (for self-hosting) |
+
+## Rate Limits (Free Tier)
+
+- 100 requests/hour
+- 1,000 requests/day
+- 10,000 requests/month
 
 ## Data Quality
 
 All data is:
-- ✅ Hand-curated by legal/compliance experts
-- ✅ Validated against official sources
-- ✅ Structured for programmatic access
-- ✅ Updated with regulatory changes
-- ✅ Includes plain-language explanations
+- Hand-curated by legal/compliance experts
+- Validated against official sources
+- Structured for programmatic access
+- Updated with regulatory changes
+- Includes plain-language explanations
 
-**Last Updated**: February 13, 2026
+## Architecture
 
-## Updates & Data Freshness
+v0.2.0 is a **thin client** — no data is bundled in the package. All law data is served from a private API, keeping intellectual property protected while keeping the MCP interface identical.
 
-**Current version**: v0.1.0 (snapshot-based data)
-
-- 📅 **Data is updated monthly** via new npm releases
-- ⚡ **Always get the latest**: Use `npx -y ai-reg-mcp-server` in your Claude config (the `-y` flag fetches the newest version)
-- 🔔 **Critical updates** (new major laws, significant amendments) published immediately
-- 📊 **Check for updates**: `npm view ai-reg-mcp-server version` shows latest available
-
-**Want automatic real-time updates?** [Join the waitlist](https://tally.so/r/Y5W7Vv) for our paid API with live data and no manual updates required.
+```
+Claude Desktop  →  MCP Server (this package)  →  AI-Reg API (private)  →  Turso DB
+```
 
 ## Development
 
 ```bash
-# Clone the repo
-git clone https://github.com/yourusername/ai-reg-mcp.git
+git clone https://github.com/Fractionalytics/ai-reg-mcp.git
 cd ai-reg-mcp
-
-# Install dependencies
 npm install
-
-# Build database from seed data
-npm run seed
-
-# Run tests
 npm test
-
-# Run integration tests
-npm run test:integration
-
-# Start MCP server
-npm start
-
-# Test with MCP Inspector
-npm run inspect
+npm run build
 ```
 
-## Architecture
+## Upgrading from v0.1.0
 
-- **Storage**: SQLite via sql.js (WASM-based, zero native deps)
-- **Transport**: MCP stdio (local, secure)
-- **Data**: Curated JSON → SQL → MCP tools
-- **Schema**: Structured for cross-law queries
+v0.2.0 requires an API key. If you were using v0.1.0:
+
+1. Get a free API key at [ai-reg-api.vercel.app](https://ai-reg-api.vercel.app)
+2. Add the `env` block to your Claude Desktop config (see Quick Start above)
+3. Restart Claude Desktop
+
+The MCP tool interface is unchanged — all your existing prompts will work the same.
 
 ## Limitations
 
 - **Not legal advice**: This is reference data, not legal guidance
 - **US-focused**: Currently covers US laws + EU AI Act
-- **Tier 1 laws only (v0.1)**: Additional laws coming in future versions
-- **No semantic search yet**: Keyword-based search only (embeddings coming later)
-
-## Roadmap
-
-### Free MCP Server
-- **v0.2**: Add Tier 2 laws (Virginia VCDPA, Washington My Health My Data, etc.)
-- **v0.3**: Auto-update mechanism for fresh data
-- **v1.0**: 30+ laws covered
-
-### Paid API (Launching Q2 2026)
-Want early access? [**Join the waitlist**](https://tally.so/r/Y5W7Vv)
-
-- ✅ **30+ laws** (all US AI/privacy laws + international)
-- ✅ **Real-time updates** (no manual reinstalls)
-- ✅ **Semantic search** (find requirements by meaning, not just keywords)
-- ✅ **REST API** (use outside of MCP)
-- ✅ **Compliance checklists** (automated based on your use case)
-- ✅ **Usage tracking & analytics**
-- ✅ **Commercial use license**
-- 💰 **Pricing**: Starting at $99/mo (estimated)
+- **Tier 1 laws only**: Additional laws coming in future versions
+- **API key required**: Free signup, instant key
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details
+MIT License — see [LICENSE](LICENSE) for details
 
 ## Support & Contact
 
-- 🐛 **Bug reports**: [GitHub Issues](https://github.com/Fractionalytics/ai-reg-mcp/issues)
-- 💡 **Feature requests**: [GitHub Discussions](https://github.com/Fractionalytics/ai-reg-mcp/discussions)
-- 📧 **Email**: david@fractionalytics.io
-- 🚀 **Paid API waitlist**: [Join here](https://tally.so/r/Y5W7Vv)
+- **Bug reports**: [GitHub Issues](https://github.com/Fractionalytics/ai-reg-mcp/issues)
+- **Email**: david@fractionalytics.io
 
 ## Disclaimer
 
 This software provides reference information about AI regulations and should not be considered legal advice. For compliance questions, consult with a qualified attorney familiar with your specific situation and jurisdiction.
-
----
-
-Built with ❤️ for the AI compliance community | [**Join the API waitlist**](https://tally.so/r/Y5W7Vv)

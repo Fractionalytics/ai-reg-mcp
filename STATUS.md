@@ -1,102 +1,96 @@
 # AI-Reg-MCP Project Status
 
-**Last Updated**: February 13, 2026
-**Version**: 0.1.0 (pre-release)
-**Status**: 🟢 Production Ready
+**Last Updated**: February 16, 2026
+**Version**: 0.2.0 (thin client — not yet published to npm)
+**Status**: Backend LIVE, MCP client ready to publish
+
+## Architecture (v0.2.0)
+
+```
+Claude Desktop  →  MCP Server (npm)  →  AI-Reg API (Vercel Edge)  →  Turso DB
+                   [public repo]         [private repo]
+```
+
+- **Public repo** (`ai-reg-mcp`): Thin MCP client, reads `AI_REG_API_KEY`, calls remote API
+- **Private repo** (`ai-reg-api`): Hono on Vercel Edge Runtime, Turso (libSQL) database
+- **Signup**: Email → instant API key at https://ai-reg-api.vercel.app
 
 ## Quick Stats
 
-- **Laws**: 9 (all Tier 1 MVP laws complete)
+- **Laws**: 9 (all Tier 1 MVP laws)
 - **Obligations**: 88 structured requirements
 - **Changelog Entries**: 32 tracked changes
-- **Tests**: 45/45 passing (100%)
-- **Code Coverage**: Query layer, tool handlers, jurisdiction normalization
+- **Tests**: 21/21 passing (10 api-client, 11 tool handlers — all mocked)
+- **npm Package**: https://www.npmjs.com/package/ai-reg-mcp-server (v0.1.0 live, v0.2.0 pending)
+- **GitHub**: https://github.com/Fractionalytics/ai-reg-mcp (public)
+- **API**: https://ai-reg-api.vercel.app (live, all endpoints verified)
+
+## What Changed: v0.1.0 → v0.2.0
+
+| Aspect | v0.1.0 (Feb 13) | v0.2.0 (Feb 16) |
+|--------|-----------------|-----------------|
+| Data storage | Bundled SQLite (sql.js/WASM) | Remote API (Turso) |
+| Dependencies | `sql.js`, `zod`, MCP SDK | `zod`, MCP SDK only |
+| Package size | Large (WASM binary + DB) | Minimal (just JS) |
+| IP protection | None (data in npm package) | Data behind authenticated API |
+| User tracking | None | API key signups + usage |
+| Update model | npm republish | Server-side, instant |
+| Auth | None | `AI_REG_API_KEY` required |
 
 ## Completion Status
 
-### ✅ Completed (MVP Ready)
+### Phase 1: Private Backend (ai-reg-api) — COMPLETE
+- [x] GitHub repo created (private)
+- [x] Hono API with 4 data endpoints + health + signup
+- [x] Auth middleware (Bearer token validation)
+- [x] Rate limiting (100/hr, 1000/day, 10000/month)
+- [x] Signup page (static HTML, dark mode)
+- [x] Turso database created and seeded (9 laws, 88 obligations, 32 changes)
+- [x] Deployed to Vercel (Edge Runtime)
+- [x] All endpoints tested end-to-end
 
-1. **Data Layer**
-   - SQLite database (sql.js, zero native deps)
-   - Schema designed for cross-law queries
-   - Seed workflow validated (JSON → DB)
-   - 9 laws fully curated and validated
+### Phase 2: Refactor Public MCP (ai-reg-mcp) — COMPLETE
+- [x] Created `src/api-client.ts` (HTTP client)
+- [x] Created `src/mcp-server/tools/format-error.ts` (shared error handling)
+- [x] Refactored `index.ts` (API key + client instead of DB)
+- [x] Refactored all 4 tool handlers (client calls instead of queries)
+- [x] Deleted local data files (db.ts, queries.ts, schema.ts, jurisdictions.ts, seed data, scripts)
+- [x] Removed `sql.js` dependency
+- [x] Bumped version to 0.2.0
+- [x] Rewrote tests (21 passing, all mocked)
+- [x] Updated README, CLAUDE.md, .well-known/mcp/server.json
 
-2. **Query Functions**
-   - searchLaws (keyword, jurisdiction, status, dates, category)
-   - getObligations (law, jurisdiction, category, applies_to)
-   - compareJurisdictions (multi-jurisdiction comparison)
-   - getChanges (regulatory change tracking)
-   - Jurisdiction normalization (full names ↔ abbreviations)
+### Phase 3: Publish & Deprecate — NOT STARTED
+- [ ] `npm deprecate ai-reg-mcp-server@0.1.0` with upgrade message
+- [ ] `npm publish` v0.2.0
+- [ ] Test full E2E: signup → key → Claude Desktop → query
+- [ ] Update MCP directory listings
 
-3. **MCP Server**
-   - 4 tools registered and working
-   - Stdio transport (npx pattern)
-   - Schema validation via Zod
-   - Error handling implemented
+### Phase 4: Distribute — NOT STARTED
+- [ ] Reddit (r/ClaudeAI) announcement
+- [ ] Smithery.ai deployment
+- [ ] Monitor metrics (API signups, usage, npm downloads)
 
-4. **Testing**
-   - 45 unit tests (vitest)
-   - MCP Inspector validation complete
-   - Integration test script (`npm run test:integration`)
-   - All test scenarios passing
+## Live API Endpoints
 
-5. **Documentation**
-   - CLAUDE.md (project overview for AI agents)
-   - product-strategy.md (schema, MVP scope)
-   - planning-context.md (status, next steps)
-   - testing-summary.md (today's work)
+| Endpoint | Auth | Status |
+|----------|------|--------|
+| `GET /api/health` | No | Verified |
+| `POST /api/auth/signup` | No | Verified |
+| `GET /api/v1/laws` | Yes | Verified |
+| `GET /api/v1/obligations` | Yes | Verified |
+| `GET /api/v1/compare` | Yes | Verified |
+| `GET /api/v1/changes` | Yes | Verified |
 
-### 🚧 Not Started (Post-MVP)
+## Infrastructure
 
-1. **Distribution**
-   - npm package publication
-   - MCP directory submissions (Anthropic, Smithery)
-   - Installation documentation
-   - README for public consumption
-
-2. **Additional Laws**
-   - Tier 2 laws (week 3-4 scope)
-   - International laws beyond EU AI Act
-   - State-level privacy laws
-
-3. **REST API**
-   - Week 4-5 scope
-   - Same data layer, HTTP transport
-   - API key management
-   - Rate limiting
-
-4. **Advanced Features**
-   - Semantic search (embeddings)
-   - Compliance checklist generation
-   - Regulatory calendar/timeline view
-
-## Testing Results
-
-### Unit Tests (vitest)
-```
-✅ 45 tests passing
-   tests/data/queries.test.ts        26 tests
-   tests/mcp-server/tools.test.ts     8 tests
-   tests/data/jurisdictions.test.ts  11 tests
-```
-
-### MCP Inspector
-```
-✅ All 4 tools discovered
-✅ Input validation working
-✅ Queries returning correct data
-✅ Jurisdiction normalization validated
-```
-
-### Integration Tests
-```
-✅ search_laws: 1 law for "Colorado" + "transparency"
-✅ get_obligations: 10 for CO-SB24-205
-✅ compare_jurisdictions: 3 jurisdictions, 10 obligations
-✅ get_changes: 18 changes since 2025-01-01
-✅ Normalization: 9/9 test cases passed
-```
+| Service | Details |
+|---------|---------|
+| **Vercel** | Edge Runtime, team `david-smiths-projects-d3732176` |
+| **Turso** | `libsql://ai-reg-laws-dksmith01.aws-us-east-1.turso.io` |
+| **npm** | `ai-reg-mcp-server` (v0.1.0 published, v0.2.0 pending) |
+| **GitHub (public)** | `Fractionalytics/ai-reg-mcp` |
+| **GitHub (private)** | `Fractionalytics/ai-reg-api` |
 
 ## Data Quality
 
@@ -114,82 +108,51 @@
 
 **Total**: 88 obligations, 32 changelog entries
 
-### Validation Status
-- ✅ All seed JSON validated against Zod schemas
-- ✅ No duplicate obligation IDs
-- ✅ All cross-references valid
-- ✅ Dates in ISO 8601 format
-- ✅ All required fields present
+## Dependencies (v0.2.0)
 
-## Technical Debt / Known Issues
-
-1. **MCP Client SDK**: Full stdio client test (scripts/test-client.ts) hangs on tool calls
-   - Workaround: Using direct query function tests (scripts/manual-test.ts)
-   - Not blocking: MCP Inspector validates stdio transport works correctly
-   - Can revisit if needed for automated E2E testing
-
-2. **Database Location**: Currently `data/laws.db` (relative path)
-   - Works for local dev and npm package distribution
-   - May need absolute path handling for some edge cases
-
-3. **No Rate Limiting**: MCP stdio has no rate limiting
-   - Not an issue for single-user local usage
-   - Will need for REST API in weeks 4-5
-
-## Dependencies
-
-### Production
+**Production:**
 - `@modelcontextprotocol/sdk` ^1.12.0 (MCP server)
-- `sql.js` ^1.12.0 (SQLite WASM)
 - `zod` ^3.24.0 (schema validation)
 
-### Development
+**Development:**
 - `typescript` ^5.7.0
-- `vitest` ^3.0.0 (testing)
-- `tsx` ^4.19.0 (TS execution)
+- `vitest` ^3.0.0
+- `tsx` ^4.19.0
 - `@types/node` ^22.10.0
 
-**Note**: No native dependencies, runs on Node v24 without compilation.
+**Removed in v0.2.0:** `sql.js` (no more WASM binary)
 
-## Commands Reference
+## Business Model
 
-```bash
-# Data workflow
-npm run validate    # Validate seed JSON
-npm run seed        # Build laws.db from seed data
+### Free Tier (Current)
+- 9 Tier 1 laws via MCP
+- API key required (instant signup)
+- Rate limited: 100/hr, 1000/day, 10000/month
+- Community support
 
-# Development
-npm run build       # Compile TypeScript
-npm test            # Run unit tests
-npm run test:integration  # Run integration tests
-npm run inspect     # Launch MCP Inspector
+### Paid API (Planned Q2 2026)
+- 30+ laws (Tier 2 + 3)
+- Real-time updates
+- Semantic search
+- Higher rate limits
+- Commercial use license
+- **Pricing**: $99-199/mo (estimated)
 
-# Production
-npm start           # Start MCP server (stdio)
-```
+## Key Metrics to Track
 
-## Decision Point: Ready to Publish?
+- **API key signups** (demand signal — stronger than waitlist)
+- **API usage** (requests per key, endpoint popularity)
+- **npm downloads** (installation trend)
+- **GitHub stars/issues** (community engagement)
 
-The project is **functionally complete for MVP**:
-- ✅ All planned features implemented
-- ✅ All tests passing
-- ✅ Inspector validation complete
-- ✅ Integration tests working
-- ✅ Documentation current
+## Project Links
 
-**Options:**
-1. **Publish now** → npm + MCP directories + public launch
-2. **Hold for Claude Desktop test** (Feb 17) → one more validation pass
-3. **Private beta** → selected users first, iterate, then public
-
-**My recommendation**: Publish now. Inspector + tests provide high confidence, and real-world usage will accelerate learning.
+- **npm**: https://www.npmjs.com/package/ai-reg-mcp-server
+- **GitHub**: https://github.com/Fractionalytics/ai-reg-mcp
+- **API**: https://ai-reg-api.vercel.app
+- **Signup**: https://ai-reg-api.vercel.app (email → instant key)
+- **Author**: david@fractionalytics.io
 
 ---
 
-**Next Steps** (when ready):
-1. Create npm account / org (@ai-reg-mcp)
-2. `npm publish` (public package)
-3. Submit to Anthropic MCP directory
-4. Submit to Smithery MCP directory
-5. Write installation guide for users
-6. Announce on relevant communities
+**Next action**: Phase 3 — `npm deprecate` v0.1.0 + `npm publish` v0.2.0

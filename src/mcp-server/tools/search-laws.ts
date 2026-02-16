@@ -1,6 +1,6 @@
 import { z } from "zod";
-import type { Database } from "sql.js";
-import { searchLaws } from "../../data/queries.js";
+import type { AiRegApiClient } from "../../api-client.js";
+import { formatErrorResponse } from "./format-error.js";
 
 export const searchLawsToolName = "search_laws";
 
@@ -43,7 +43,7 @@ export const searchLawsToolConfig = {
   },
 };
 
-export function createSearchLawsHandler(db: Database) {
+export function createSearchLawsHandler(client: AiRegApiClient) {
   return async (args: {
     jurisdiction?: string;
     status?: string;
@@ -51,27 +51,32 @@ export function createSearchLawsHandler(db: Database) {
     effective_date_before?: string;
     applies_to?: string;
     category?: string;
+    query?: string;
   }) => {
-    const laws = searchLaws(db, args as Parameters<typeof searchLaws>[1]);
+    try {
+      const laws = await client.searchLaws(args as any);
 
-    if (laws.length === 0) {
+      if (laws.length === 0) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "No laws found matching the specified criteria.",
+            },
+          ],
+        };
+      }
+
       return {
         content: [
           {
             type: "text" as const,
-            text: "No laws found matching the specified criteria.",
+            text: JSON.stringify(laws, null, 2),
           },
         ],
       };
+    } catch (error) {
+      return formatErrorResponse(error);
     }
-
-    return {
-      content: [
-        {
-          type: "text" as const,
-          text: JSON.stringify(laws, null, 2),
-        },
-      ],
-    };
   };
 }

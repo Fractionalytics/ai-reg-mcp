@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * AI-Reg-MCP Server
+ * AI-Reg-MCP Server (v0.2.0 — Thin Client)
  * Structured, queryable US AI and privacy law data via Model Context Protocol.
+ * Connects to the AI-Reg remote API for data.
  */
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { getDatabase, closeDatabase } from "../data/db.js";
+import { AiRegApiClient } from "../api-client.js";
 
 import {
   searchLawsToolName,
@@ -30,12 +31,37 @@ import {
   createGetChangesHandler,
 } from "./tools/get-changes.js";
 
+const SIGNUP_URL = "https://ai-reg-api.vercel.app";
+const API_BASE_URL = process.env.AI_REG_API_URL || "https://ai-reg-api.vercel.app";
+
 async function main() {
-  const db = await getDatabase();
+  const apiKey = process.env.AI_REG_API_KEY;
+
+  if (!apiKey) {
+    console.error(
+      `\nError: AI_REG_API_KEY environment variable is required.\n\n` +
+      `Get a free API key at: ${SIGNUP_URL}\n\n` +
+      `Then add it to your Claude Desktop config:\n\n` +
+      `  {\n` +
+      `    "mcpServers": {\n` +
+      `      "ai-reg-mcp": {\n` +
+      `        "command": "npx",\n` +
+      `        "args": ["-y", "ai-reg-mcp-server"],\n` +
+      `        "env": {\n` +
+      `          "AI_REG_API_KEY": "your-key-here"\n` +
+      `        }\n` +
+      `      }\n` +
+      `    }\n` +
+      `  }\n`
+    );
+    process.exit(1);
+  }
+
+  const client = new AiRegApiClient(API_BASE_URL, apiKey);
 
   const server = new McpServer({
     name: "ai-reg-mcp",
-    version: "0.1.0",
+    version: "0.2.0",
   });
 
   // Register all 4 tools
@@ -43,28 +69,28 @@ async function main() {
     searchLawsToolName,
     searchLawsToolConfig.description,
     searchLawsToolConfig.inputSchema,
-    createSearchLawsHandler(db)
+    createSearchLawsHandler(client)
   );
 
   server.tool(
     getObligationsToolName,
     getObligationsToolConfig.description,
     getObligationsToolConfig.inputSchema,
-    createGetObligationsHandler(db)
+    createGetObligationsHandler(client)
   );
 
   server.tool(
     compareJurisdictionsToolName,
     compareJurisdictionsToolConfig.description,
     compareJurisdictionsToolConfig.inputSchema,
-    createCompareJurisdictionsHandler(db)
+    createCompareJurisdictionsHandler(client)
   );
 
   server.tool(
     getChangesToolName,
     getChangesToolConfig.description,
     getChangesToolConfig.inputSchema,
-    createGetChangesHandler(db)
+    createGetChangesHandler(client)
   );
 
   // Connect via stdio
@@ -72,14 +98,8 @@ async function main() {
   await server.connect(transport);
 
   // Graceful shutdown
-  process.on("SIGINT", () => {
-    closeDatabase();
-    process.exit(0);
-  });
-  process.on("SIGTERM", () => {
-    closeDatabase();
-    process.exit(0);
-  });
+  process.on("SIGINT", () => process.exit(0));
+  process.on("SIGTERM", () => process.exit(0));
 }
 
 main().catch((error) => {

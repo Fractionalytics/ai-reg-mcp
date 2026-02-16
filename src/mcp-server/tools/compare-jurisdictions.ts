@@ -1,6 +1,6 @@
 import { z } from "zod";
-import type { Database } from "sql.js";
-import { compareJurisdictions } from "../../data/queries.js";
+import type { AiRegApiClient } from "../../api-client.js";
+import { formatErrorResponse } from "./format-error.js";
 
 export const compareJurisdictionsToolName = "compare_jurisdictions";
 
@@ -27,35 +27,36 @@ export const compareJurisdictionsToolConfig = {
   },
 };
 
-export function createCompareJurisdictionsHandler(db: Database) {
+export function createCompareJurisdictionsHandler(client: AiRegApiClient) {
   return async (args: {
     jurisdictions: string[];
     category?: string;
     applies_to?: string;
   }) => {
-    const comparison = compareJurisdictions(
-      db,
-      args as Parameters<typeof compareJurisdictions>[1]
-    );
+    try {
+      const comparison = await client.compareJurisdictions(args as any);
 
-    if (comparison.length === 0) {
+      if (comparison.length === 0) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "No obligations found for the specified jurisdictions and criteria.",
+            },
+          ],
+        };
+      }
+
       return {
         content: [
           {
             type: "text" as const,
-            text: "No obligations found for the specified jurisdictions and criteria.",
+            text: JSON.stringify(comparison, null, 2),
           },
         ],
       };
+    } catch (error) {
+      return formatErrorResponse(error);
     }
-
-    return {
-      content: [
-        {
-          type: "text" as const,
-          text: JSON.stringify(comparison, null, 2),
-        },
-      ],
-    };
   };
 }

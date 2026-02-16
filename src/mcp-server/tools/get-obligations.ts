@@ -1,6 +1,6 @@
 import { z } from "zod";
-import type { Database } from "sql.js";
-import { getObligations } from "../../data/queries.js";
+import type { AiRegApiClient } from "../../api-client.js";
+import { formatErrorResponse } from "./format-error.js";
 
 export const getObligationsToolName = "get_obligations";
 
@@ -31,36 +31,37 @@ export const getObligationsToolConfig = {
   },
 };
 
-export function createGetObligationsHandler(db: Database) {
+export function createGetObligationsHandler(client: AiRegApiClient) {
   return async (args: {
     law_id?: string;
     jurisdiction?: string;
     applies_to?: string;
     category?: string;
   }) => {
-    const obligations = getObligations(
-      db,
-      args as Parameters<typeof getObligations>[1]
-    );
+    try {
+      const obligations = await client.getObligations(args as any);
 
-    if (obligations.length === 0) {
+      if (obligations.length === 0) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "No obligations found matching the specified criteria.",
+            },
+          ],
+        };
+      }
+
       return {
         content: [
           {
             type: "text" as const,
-            text: "No obligations found matching the specified criteria.",
+            text: JSON.stringify(obligations, null, 2),
           },
         ],
       };
+    } catch (error) {
+      return formatErrorResponse(error);
     }
-
-    return {
-      content: [
-        {
-          type: "text" as const,
-          text: JSON.stringify(obligations, null, 2),
-        },
-      ],
-    };
   };
 }

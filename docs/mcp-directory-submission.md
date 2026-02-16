@@ -30,7 +30,10 @@ npx ai-reg-mcp-server
   "mcpServers": {
     "ai-reg-mcp": {
       "command": "npx",
-      "args": ["-y", "ai-reg-mcp-server"]
+      "args": ["-y", "ai-reg-mcp-server"],
+      "env": {
+        "AI_REG_API_KEY": "aireg_live_your_key_here"
+      }
     }
   }
 }
@@ -42,7 +45,7 @@ npx ai-reg-mcp-server
 3. `compare_jurisdictions` - Compare requirements across multiple jurisdictions
 4. `get_changes` - View regulatory changes over time
 
-**Testing Account**: Not required (public data, no authentication)
+**Testing Account**: Free API key available instantly at https://ai-reg-api.vercel.app (enter email, get key)
 
 **Documentation**: https://github.com/Fractionalytics/ai-reg-mcp#readme
 
