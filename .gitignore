@@ -3,3 +3,10 @@ dist/
 data/laws.db
 *.tsbuildinfo
 .env
+test-direct.js
+test-package.tgz
+test-published.js
+ARCHITECTURE_PIVOT_IDEA.md
+auth
+auth-wal
+docs/session-summary-feb-13-2026.md
