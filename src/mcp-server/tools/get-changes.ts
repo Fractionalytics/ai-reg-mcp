@@ -6,7 +6,7 @@ export const getChangesToolName = "get_changes";
 
 export const getChangesToolConfig = {
   description:
-    "Get recent changes (amendments, delays, enforcement actions, new guidance) across tracked AI/privacy laws. The 'what's new' feed for staying current on regulatory changes.",
+    "Get recent changes (amendments, delays, enforcement actions, guidance, repeals, and new laws) across tracked AI/privacy laws. The 'what's new' feed for staying current on regulatory changes.",
   inputSchema: {
     since: z
       .string()
