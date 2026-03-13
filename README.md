@@ -8,9 +8,9 @@ AI-Reg-MCP is an MCP server that provides Claude (and other MCP clients) with in
 
 ## Features
 
-- **9 curated AI/privacy laws** including Colorado AI Act, EU AI Act, California ADMT, NYC LL-144, and more
-- **88 structured compliance obligations** with plain-language explanations
-- **32 tracked regulatory changes** with dates and impact descriptions
+- **15 curated AI/privacy laws** including Colorado AI Act, EU AI Act, California ADMT, NYC LL-144, and more
+- **136 structured compliance obligations** with plain-language explanations
+- **66 tracked regulatory changes** with dates and impact descriptions
 - **Natural language jurisdiction queries** (e.g., "Colorado" or "CO" both work)
 - **Cross-jurisdictional comparisons** to find the most restrictive requirements
 - **Zero native dependencies** — works on all platforms
@@ -72,6 +72,7 @@ View regulatory changes over time.
 
 ## Supported Laws (v0.2.0)
 
+**Tier 1 Laws**
 - **Colorado AI Act (SB24-205)** — High-risk AI systems, algorithmic discrimination
 - **California ADMT Regulations (CCPA)** — Automated decision-making technology
 - **California FEHA AI Regs** — AI/ADS in employment decisions
@@ -81,6 +82,14 @@ View regulatory changes over time.
 - **Utah SB226** — AI consumer protection
 - **EU AI Act** — High-risk AI systems (EU)
 - **US TAKE IT DOWN Act** — NCII removal requirements
+
+**Tier 2 Laws**
+- **Colorado AI Insurance Governance Rules (3 CCR 702-10)** — AI use in insurance underwriting/claims
+- **California AI Transparency Act (SB 942)** — AI-generated content disclosure requirements
+- **California Companion Chatbot Safety Law (SB 243)** — Safety standards for AI companion apps
+- **New York AI Synthetic Performer Advertising Disclosure** — Synthetic performer consent/disclosure
+- **Montana Right of Publicity and Digital Replica Act (HB 513)** — Digital replica protections
+- **Nevada Synthetic Media Political Advertising Disclosure (AB 73)** — Synthetic media in political ads
 
 ## Configuration
 
@@ -136,7 +145,7 @@ The MCP tool interface is unchanged — all your existing prompts will work the 
 
 - **Not legal advice**: This is reference data, not legal guidance
 - **US-focused**: Currently covers US laws + EU AI Act
-- **Tier 1 laws only**: Additional laws coming in future versions
+- **Tier 1 + 2 laws**: Additional Tier 3 laws coming in future versions
 - **API key required**: Free signup, instant key
 
 ## License
