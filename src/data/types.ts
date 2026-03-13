@@ -22,6 +22,9 @@ export interface Obligation {
   recurring: boolean;
   frequency: string | null;
   citation: string;
+  /** Direct link to the codified statutory section. `null` means not yet enriched — not that no URL exists. */
+  source_url: string | null;
+  verbatim: boolean;            // true = requirement_text is verbatim; false = paraphrase
 }
 
 export type ObligationCategory =
@@ -44,6 +47,7 @@ export interface Penalty {
   cure_period: boolean;
   cure_period_days: number | null;
   notes: string;
+  citation: string | null;     // Exact statute section establishing the penalty range
 }
 
 export interface SafeHarbor {
@@ -57,13 +61,14 @@ export interface CrossReference {
   relationship: string;
   category: string;
   notes: string;
+  citation: string | null;     // Specific section of the related law being compared
 }
 
 export interface ChangeLogEntry {
   id?: number;
   law_id: string;
   date: string;
-  change_type: "amendment" | "delay" | "guidance" | "enforcement_action" | "new_law";
+  change_type: "new_law" | "amendment" | "guidance" | "enforcement_action" | "delay" | "repeal";
   description: string;
 }
 

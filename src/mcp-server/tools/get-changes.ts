@@ -21,7 +21,7 @@ export const getChangesToolConfig = {
       .optional()
       .describe("Filter to changes for a specific law"),
     change_type: z
-      .enum(["amendment", "delay", "guidance", "enforcement_action", "new_law"])
+      .enum(["amendment", "delay", "guidance", "enforcement_action", "new_law", "repeal"])
       .optional()
       .describe("Filter by type of change"),
   },

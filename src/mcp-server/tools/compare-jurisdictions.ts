@@ -6,7 +6,7 @@ export const compareJurisdictionsToolName = "compare_jurisdictions";
 
 export const compareJurisdictionsToolConfig = {
   description:
-    "Compare AI/privacy law obligations across jurisdictions. Given a list of jurisdictions and optional filters, returns a side-by-side comparison grouped by obligation category.",
+    "Compare AI/privacy law obligations across jurisdictions. Given a list of jurisdictions and optional filters, returns a side-by-side comparison grouped by obligation category. Each obligation includes source_url (direct link to the codified statutory section; null if not yet mapped) and verbatim (true if requirement_text is a direct statutory quote; false if paraphrased).",
   inputSchema: {
     jurisdictions: z
       .array(z.string())
