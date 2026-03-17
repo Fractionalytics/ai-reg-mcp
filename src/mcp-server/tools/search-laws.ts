@@ -6,7 +6,7 @@ export const searchLawsToolName = "search_laws";
 
 export const searchLawsToolConfig = {
   description:
-    "Search US AI and privacy laws by jurisdiction, status, effective date range, applicability, and category. Returns matching laws with summary-level data. Each law's penalties object includes citation (the exact statute section establishing the penalty range; null if not yet mapped). Each cross_references entry includes citation (the specific section of the related law being compared; null if not yet mapped).",
+    "Search US AI and privacy laws by jurisdiction, status, effective date range, applicability, and category. Returns matching laws with summary-level data. Each law includes source_url (direct link to the law's official source text). Each law's penalties object includes citation (the exact statute section establishing the penalty range; null if not yet mapped). Each cross_references entry includes citation (the specific section of the related law being compared; null if not yet mapped).",
   inputSchema: {
     jurisdiction: z
       .string()

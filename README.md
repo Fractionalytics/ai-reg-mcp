@@ -19,7 +19,7 @@ AI Regulations MCP (`ai-reg-mcp`) is an MCP server that provides Claude (and oth
 
 ### 1. Get a Free API Key
 
-Visit **[ai-reg-api.vercel.app](https://ai-reg-api.vercel.app)** and enter your email. You'll get an API key instantly.
+Visit **[ai-reg-api.vercel.app](https://ai-reg-api.vercel.app)** and sign in with GitHub. You'll get an API key instantly.
 
 ### 2. Configure Claude Desktop
 
@@ -70,7 +70,7 @@ Compare requirements across multiple jurisdictions.
 ### 4. `get_changes`
 View regulatory changes over time.
 
-## Supported Laws (v0.2.0)
+## Supported Laws (v0.3.0)
 
 **Tier 1 Laws**
 - **Colorado AI Act (SB24-205)** — High-risk AI systems, algorithmic discrimination

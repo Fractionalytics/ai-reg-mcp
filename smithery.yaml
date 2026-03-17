@@ -1,5 +1,5 @@
 name: ai-reg-mcp-server
-version: 0.1.0
+version: 0.3.0
 description: Structured, queryable US AI and privacy law data via MCP
 author: David Smith <david@fractionalytics.io>
 homepage: https://github.com/Fractionalytics/ai-reg-mcp
@@ -39,8 +39,8 @@ tools:
     description: View regulatory changes over time
 
 features:
-  - 9 curated AI/privacy laws
-  - 88 structured compliance obligations
+  - 15 curated AI/privacy laws
+  - 136 structured compliance obligations
   - Natural language jurisdiction queries
   - Cross-jurisdictional comparisons
   - Zero native dependencies

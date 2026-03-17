@@ -6,7 +6,7 @@ export const getObligationsToolName = "get_obligations";
 
 export const getObligationsToolConfig = {
   description:
-    "Get structured obligations from AI/privacy laws. Filter by law, jurisdiction, role, or obligation category. Returns discrete, categorized obligations that agents can reason over. Each obligation includes source_url (direct link to the codified statutory section; null if not yet mapped) and verbatim (true if requirement_text is a direct statutory quote; false if paraphrased — currently false for all obligations pending curation).",
+    "Get structured obligations from AI/privacy laws. Filter by law, jurisdiction, role, or obligation category. Returns discrete, categorized obligations that agents can reason over. Each obligation includes source_url (direct link to the codified statutory section; null if not yet mapped) and verbatim (boolean — true if requirement_text is a direct statutory quote, false if paraphrased).",
   inputSchema: {
     law_id: z
       .string()
