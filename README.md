@@ -1,10 +1,10 @@
-# AI-Reg-MCP
+# AI Regulations MCP
 
 Structured, queryable US AI and privacy law data via Model Context Protocol (MCP).
 
 ## What is this?
 
-AI-Reg-MCP is an MCP server that provides Claude (and other MCP clients) with instant access to structured data about US AI regulations, privacy laws, and compliance requirements. No more searching through PDFs or legal websites — get precise regulatory information through natural language queries.
+AI Regulations MCP (`ai-reg-mcp`) is an MCP server that provides Claude (and other MCP clients) with instant access to structured data about US AI regulations, privacy laws, and compliance requirements. No more searching through PDFs or legal websites — get precise regulatory information through natural language queries.
 
 ## Features
 
