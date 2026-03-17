@@ -1,4 +1,4 @@
-name: ai-reg-mcp-server
+name: AI Regulations MCP Server
 version: 0.3.0
 description: Structured, queryable US AI and privacy law data via MCP
 author: David Smith <david@fractionalytics.io>

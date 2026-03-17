@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * AI-Reg-MCP Server (v0.2.0 — Thin Client)
+ * AI Regulations MCP Server (v0.3.1 — Thin Client)
  * Structured, queryable US AI and privacy law data via Model Context Protocol.
  * Connects to the AI-Reg remote API for data.
  */
@@ -60,8 +60,8 @@ async function main() {
   const client = new AiRegApiClient(API_BASE_URL, apiKey);
 
   const server = new McpServer({
-    name: "ai-reg-mcp",
-    version: "0.3.0",
+    name: "AI Regulations MCP",
+    version: "0.3.1",
   });
 
   // Register all 4 tools

@@ -1,6 +1,6 @@
 {
   "name": "ai-reg-mcp-server",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Structured, queryable US AI and privacy law data via MCP (thin client)",
   "type": "module",
   "main": "dist/mcp-server/index.js",
