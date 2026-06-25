@@ -8,9 +8,9 @@ AI Regulations MCP (`ai-reg-mcp`) is an MCP server that provides Claude (and oth
 
 ## Features
 
-- **15 curated AI/privacy laws** including Colorado AI Act, EU AI Act, California ADMT, NYC LL-144, and more
-- **136 structured compliance obligations** with plain-language explanations
-- **66 tracked regulatory changes** with dates and impact descriptions
+- **48 curated AI/privacy laws across 24 jurisdictions** including the EU AI Act, Colorado ADMT, California ADMT, NYC LL-144, and more
+- **281 structured compliance obligations** with plain-language explanations
+- **160 tracked regulatory changes** with dates and impact descriptions
 - **Natural language jurisdiction queries** (e.g., "Colorado" or "CO" both work)
 - **Cross-jurisdictional comparisons** to find the most restrictive requirements
 - **Zero native dependencies** — works on all platforms
@@ -70,26 +70,24 @@ Compare requirements across multiple jurisdictions.
 ### 4. `get_changes`
 View regulatory changes over time.
 
-## Supported Laws (v0.3.0)
+## Coverage
 
-**Tier 1 Laws**
-- **Colorado AI Act (SB24-205)** — High-risk AI systems, algorithmic discrimination
-- **California ADMT Regulations (CCPA)** — Automated decision-making technology
-- **California FEHA AI Regs** — AI/ADS in employment decisions
-- **NYC Local Law 144** — Automated employment decision tools
-- **Illinois AIVIRA** — AI video interviews
-- **Texas TRAIGA** — Responsible AI governance
-- **Utah SB226** — AI consumer protection
-- **EU AI Act** — High-risk AI systems (EU)
-- **US TAKE IT DOWN Act** — NCII removal requirements
+**48 laws across 24 jurisdictions** — US federal, the EU, and US states including
+CA, CO, NY, WA, TX, IL, CT, and more — with **281 structured obligations** and
+**160 tracked changes**. Coverage grows with monthly regulatory refreshes.
 
-**Tier 2 Laws**
-- **Colorado AI Insurance Governance Rules (3 CCR 702-10)** — AI use in insurance underwriting/claims
-- **California AI Transparency Act (SB 942)** — AI-generated content disclosure requirements
-- **California Companion Chatbot Safety Law (SB 243)** — Safety standards for AI companion apps
-- **New York AI Synthetic Performer Advertising Disclosure** — Synthetic performer consent/disclosure
-- **Montana Right of Publicity and Digital Replica Act (HB 513)** — Digital replica protections
-- **Nevada Synthetic Media Political Advertising Disclosure (AB 73)** — Synthetic media in political ads
+> The full, always-current list is available live (no key required) at
+> **[ai-reg-api.vercel.app/status](https://ai-reg-api.vercel.app/status)** or via
+> `GET /api/coverage`.
+
+**Categories covered**: high-risk AI governance · automated employment decisions ·
+automated decision-making & profiling · AI in healthcare & insurance · companion &
+mental-health chatbots · frontier-model transparency · digital likeness & deepfakes ·
+election synthetic media · surveillance pricing · content provenance.
+
+**Flagship laws**: Colorado ADMT (SB 26-189) · EU AI Act · California ADMT (CCPA),
+FEHA AI, SB 53 (frontier), SB 942 · NYC Local Law 144 · Texas TRAIGA · NY RAISE Act ·
+US TAKE IT DOWN Act · Tennessee ELVIS Act.
 
 ## Configuration
 
@@ -145,7 +143,7 @@ The MCP tool interface is unchanged — all your existing prompts will work the 
 
 - **Not legal advice**: This is reference data, not legal guidance
 - **US-focused**: Currently covers US laws + EU AI Act
-- **Tier 1 + 2 laws**: Additional Tier 3 laws coming in future versions
+- **Growing coverage**: new and amended laws are added with monthly regulatory refreshes
 - **API key required**: Free signup, instant key
 
 ## License
